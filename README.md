@@ -7,7 +7,7 @@ Los datos son recopilados a nivel federal por el **Centro para el Control y la P
 El propósito de esta recolección de datos es analizar los índices de mortalidad en adultos mayores de 35 años debido a enfermedades cardiovasculares en los Estados Unidos. La muestra busca identificar patrones y tendencias que contribuyen al desarrollo de problemas cardíacos y sus consecuencias.
 
 ## ¿Dónde se pueden obtener?
-Los datos son de acceso público y están disponibles en la página oficial de catálogos de datos del gobierno de los Estados Unidos. Se pueden consultar de diversas formas a través del siguiente enlace: **Heart Disease Mortality Data**.
+Los datos son de acceso público y están disponibles en la página oficial de catálogos de datos del gobierno de los Estados Unidos. Se pueden consultar de diversas formas a través del siguiente enlace: **[Heart Disease Mortality Data](https://catalog.data.gov/dataset/heart-disease-mortality-data-among-us-adults-35-by-state-territory-and-county-2019-2021)**.
 
 ## ¿Con qué frecuencia se actualizan?
 Se tiene registro de las siguientes fechas de actualización:
