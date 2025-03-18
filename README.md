@@ -59,7 +59,6 @@ psql -U postgres
 -- Crea una nueva base de datos para el análisis
 CREATE DATABASE heart_disease_mortality;
 
-
 -- Conéctate a la base de datos recién creada
 \c heart_disease_mortality
 
