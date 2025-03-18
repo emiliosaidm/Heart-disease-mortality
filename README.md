@@ -8,28 +8,28 @@ Los datos están disponibles en la plataforma oficial del gobierno de EE.UU., ac
 
 El dataset cuenta con **78,793 registros** y **21 atributos**, que incluyen información sobre ubicación, tasas de mortalidad y estratificación demográfica. A continuación, se detallan los atributos:
 
-| Atributo                                   | Descripción                                                                                             |
-|-------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Year** *(numérico)*                      | Año de recopilación (2019, 2020, 2021).                                                                |
-| **LocationAbbr** *(categórico)*            | Abreviatura del estado o territorio.                                                                  |
-| **LocationDesc** *(categórico)*            | Nombre completo del estado, territorio o condado.                                                     |
-| **GeographicLevel** *(categórico)*         | Nivel geográfico del dato (State o County).                                                           |
-| **DataSource** *(categórico)*              | Fuente de los datos (NVSS - National Vital Statistics System).                                        |
-| **Class** *(categórico)*                   | Categoría general de la enfermedad (Cardiovascular Diseases).                                         |
-| **Topic** *(categórico)*                   | Subcategoría específica (Heart Disease Mortality).                                                    |
-| **Data_Value** *(numérico)*                | Tasa de mortalidad por enfermedades cardíacas (muertes por cada 100,000 habitantes).                  |
-| **Data_Value_Unit** *(categórico)*         | Unidad de medida: "per 100,000 population".                                                          |
-| **Data_Value_Type** *(categórico)*         | Tipo de medida utilizada para la tasa de mortalidad.                                                  |
-| **Data_Value_Footnote** *(texto)*          | Notas aclaratorias sobre los valores de los datos.                                                    |
-| **StratificationCategory1** *(categórico)* | Primera categoría de estratificación ("Sex").                                                        |
-| **Stratification1** *(categórico)*         | Estratificación por sexo ("Male" o "Female").                                                       |
-| **StratificationCategory2** *(categórico)* | Segunda categoría de estratificación ("Race/Ethnicity").                                             |
-| **Stratification2** *(categórico)*         | Estratificación por raza/etnicidad (White, Black, Hispanic, Asian, More than one race).              |
-| **TopicID** *(categórico)*                 | Código interno del tema de la base de datos.                                                         |
-| **LocationID** *(numérico)*                | Código único asignado al estado o condado.                                                           |
-| **Y_lat** *(numérico)*                     | Coordenada de latitud geográfica.                                                                    |
-| **X_lon** *(numérico)*                     | Coordenada de longitud geográfica.                                                                   |
-| **Georeference** *(texto)*                 | Ubicación en formato POINT (longitud, latitud).                                                     |
+| Atributo                                   | Descripción                                                                             |
+| ------------------------------------------ | --------------------------------------------------------------------------------------- |
+| **Year** _(numérico)_                      | Año de recopilación (2019, 2020, 2021).                                                 |
+| **LocationAbbr** _(categórico)_            | Abreviatura del estado o territorio.                                                    |
+| **LocationDesc** _(categórico)_            | Nombre completo del estado, territorio o condado.                                       |
+| **GeographicLevel** _(categórico)_         | Nivel geográfico del dato (State o County).                                             |
+| **DataSource** _(categórico)_              | Fuente de los datos (NVSS - National Vital Statistics System).                          |
+| **Class** _(categórico)_                   | Categoría general de la enfermedad (Cardiovascular Diseases).                           |
+| **Topic** _(categórico)_                   | Subcategoría específica (Heart Disease Mortality).                                      |
+| **Data_Value** _(numérico)_                | Tasa de mortalidad por enfermedades cardíacas (muertes por cada 100,000 habitantes).    |
+| **Data_Value_Unit** _(categórico)_         | Unidad de medida: "per 100,000 population".                                             |
+| **Data_Value_Type** _(categórico)_         | Tipo de medida utilizada para la tasa de mortalidad.                                    |
+| **Data_Value_Footnote** _(texto)_          | Notas aclaratorias sobre los valores de los datos.                                      |
+| **StratificationCategory1** _(categórico)_ | Primera categoría de estratificación ("Sex").                                           |
+| **Stratification1** _(categórico)_         | Estratificación por sexo ("Male" o "Female").                                           |
+| **StratificationCategory2** _(categórico)_ | Segunda categoría de estratificación ("Race/Ethnicity").                                |
+| **Stratification2** _(categórico)_         | Estratificación por raza/etnicidad (White, Black, Hispanic, Asian, More than one race). |
+| **TopicID** _(categórico)_                 | Código interno del tema de la base de datos.                                            |
+| **LocationID** _(numérico)_                | Código único asignado al estado o condado.                                              |
+| **Y_lat** _(numérico)_                     | Coordenada de latitud geográfica.                                                       |
+| **X_lon** _(numérico)_                     | Coordenada de longitud geográfica.                                                      |
+| **Georeference** _(texto)_                 | Ubicación en formato POINT (longitud, latitud).                                         |
 
 Los atributos pueden agruparse de la siguiente manera:
 
@@ -41,3 +41,6 @@ Este análisis busca comprender la distribución de la mortalidad por enfermedad
 
 En términos éticos, el análisis de estos datos considera la privacidad y anonimización de la información, la integridad de los datos sin manipulación de valores, la objetividad en el análisis y la equidad en la interpretación de los resultados. Se evita cualquier sesgo que pueda generar discriminación o reforzar desigualdades en el acceso a la salud.
 
+---
+
+### Carga inicial de datos
