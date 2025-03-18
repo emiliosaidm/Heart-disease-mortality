@@ -63,3 +63,10 @@ CREATE DATABASE heart_disease_mortality;
 # 4. Verifica que estás conectado a la base de datos correcta
 \conninfo
 ```
+
+Posteriormente, creamos un **esquenma** donde vamos a tener los datos e crudo. Ejecutamos el comando
+
+```bash
+  # Crea un esquema llamado `raw` para almacenar los datos en crudo
+  CREATE SCHEMA raw;
+```
