@@ -53,20 +53,21 @@ Primero, es necesario crear la base de datos para poder realizar la carga de la 
 
 # 1. Inicia sesión en PostgreSQL
 psql -U postgres
+```
 
-# 2. Crea una nueva base de datos para el análisis
+```SQL
+-- Crea una nueva base de datos para el análisis
 CREATE DATABASE heart_disease_mortality;
 
-# 3. Conéctate a la base de datos recién creada
+
+-- Conéctate a la base de datos recién creada
 \c heart_disease_mortality
 
-# 4. Verifica que estás conectado a la base de datos correcta
-\conninfo
 ```
 
 Posteriormente, creamos un **esquema** donde vamos a tener los datos e crudo. Ejecutamos el comando
 
-```bash
+```SQL
   # Crea un esquema llamado `raw` para almacenar los datos en crudo
   CREATE SCHEMA raw;
 ```
