@@ -51,6 +51,7 @@ El documento contiene más de **78,000** tuplas. Específicamente, el dataset pr
 
 ### Atributos categóricos:
 - LocationAbbr
+- Class
 - LocationDesc
 - GeographicLevel
 - StratificationCategory1
@@ -61,7 +62,6 @@ El documento contiene más de **78,000** tuplas. Específicamente, el dataset pr
 
 ### Atributos de tipo texto:
 - DataSource
-- Class
 - Topic
 - Data_Value_Type
 - Georeference
