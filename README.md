@@ -67,6 +67,6 @@ CREATE DATABASE heart_disease_mortality;
 Posteriormente, creamos un **esquema** donde vamos a tener los datos e crudo. Ejecutamos el comando
 
 ```SQL
-  # Crea un esquema llamado `raw` para almacenar los datos en crudo
+  -- Crea un esquema llamado `raw` para almacenar los datos en crudo
   CREATE SCHEMA raw;
 ```
