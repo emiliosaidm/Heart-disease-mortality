@@ -52,7 +52,7 @@ Primero, es necesario crear la base de datos para poder realizar la carga de la 
 Desde tu terminal, ejecuta la serie de comandos mostrados a continuación para poder obtener los datos.
 
 ```bash
-# Entrar a la consola de postgres.
+# Entrar a la consola de postgres
 psql -U postgres
 ```
 
@@ -83,6 +83,7 @@ Posteriormente, corremos el siguiente comando para poder importar las filas del 
     geographic_level,
     data_source,
     topic,
+    class,
     data_value,
     data_value_unit,
     data_value_type,
