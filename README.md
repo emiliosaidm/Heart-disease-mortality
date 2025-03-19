@@ -49,8 +49,10 @@ Primero, es necesario crear la base de datos para poder realizar la carga de la 
 
 **Nota**: todo el trabajo será realizado por medio de PostgreSQL, puedes descagarlo desde el [sitio oficial](https://www.postgresql.org/download/).
 
+Desde tu terminal, ejecuta la serie de comandos mostrados a continuación para poder obtener los datos.
+
 ```bash
-# Accede a la terminal y ejecuta:
+# Entrar a la consola de postgres.
 psql -U postgres
 ```
 
