@@ -104,6 +104,10 @@ Posteriormente, corremos el siguiente comando para poder importar las filas del 
 
 Se deben de importar alrededor de 78792 tuplas.
 
+A través de un análisis extenso, se identificaron patrones útiles para poder hacer posteriormente una limpieza de datos.
+
+De las 20 columnas, no hay ningúna con identificadores únicos. De hecho, hasta este momento, si agrupamos los datos por algún identificador (i.e `location_id`), hay al rededor de 24 tuplas distintas por cada grupo.
+
 ---
 
 ### Limpieza de datos
