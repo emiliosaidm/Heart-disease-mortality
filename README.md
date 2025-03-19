@@ -46,12 +46,12 @@ En términos éticos, el análisis de estos datos considera la privacidad y anon
 ### Carga inicial de datos
 
 Primero, es necesario crear la base de datos para poder realizar la carga de la base de datos.
+
 **Nota**: todo el trabajo será realizado por medio de PostgreSQL, puedes descagarlo desde el [sitio oficial](https://www.postgresql.org/download/).
 
 ```bash
-# Accede a la terminal y ejecuta los siguientes comandos:
+# Accede a la terminal y ejecuta:
 
-# 1. Inicia sesión en PostgreSQL
 psql -U postgres
 ```
 
