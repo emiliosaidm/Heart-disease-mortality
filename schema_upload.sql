@@ -1,3 +1,6 @@
+-- Crear el Schema crudo.
+CREATE SCHEMA raw;
+
 -- Crear la tabla en el Schema raw.
 DROP TABLE IF EXISTS raw.disease_mortality;
 CREATE TABLE raw.disease_mortality (
