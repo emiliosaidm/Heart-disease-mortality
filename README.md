@@ -99,4 +99,5 @@ CREATE TABLE raw.disease_mortality (
     georeference TEXT
 );
 ```
-
+Posteriormente, desde la misma terminal, ejecutamos el siguiente comando para copiar los datos del CSV a la tabla
+que cabamos de crear.
