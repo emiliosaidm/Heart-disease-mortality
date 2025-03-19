@@ -1,4 +1,5 @@
 -- Crear el Schema crudo.
+DROP SCHEMA IF EXISTS raw;
 CREATE SCHEMA raw;
 
 -- Crear la tabla en el Schema raw.
