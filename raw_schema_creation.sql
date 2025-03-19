@@ -9,6 +9,7 @@ CREATE TABLE raw.disease_mortality (
     location_description VARCHAR(100),
     geographic_level VARCHAR(50),
     data_source VARCHAR(10),
+    class VARCHAR(50),
     topic VARCHAR(100),
     data_value DOUBLE PRECISION,
     data_value_unit VARCHAR(150),
