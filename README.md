@@ -64,4 +64,9 @@ CREATE DATABASE heart_disease_mortality;
 
 ```
 
-Para poder insertar los datos en bruto, primero se debe de crear el script 
+Ahora, hay que ejecutar el siguiente script, el cual se encargará de crear un schema llamado **raw** con la tabla `disease_mortality`, a la cual le importaremos los datos de la fuente usada.
+
+```bash
+# Ejecuta el script para crear el esquema de la base de datos
+\i raw_schema_creation.sql
+```
