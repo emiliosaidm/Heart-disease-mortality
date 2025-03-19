@@ -51,7 +51,6 @@ Primero, es necesario crear la base de datos para poder realizar la carga de la 
 
 ```bash
 # Accede a la terminal y ejecuta:
-
 psql -U postgres
 ```
 
@@ -64,9 +63,11 @@ CREATE DATABASE heart_disease_mortality;
 
 ```
 
-Ahora, hay que ejecutar el siguiente script, el cual se encargará de crear un schema llamado **raw** con la tabla `disease_mortality`, a la cual le importaremos los datos de la fuente usada.
+Ahora, hay que ejecutar el siguiente script, el cual se encargará de crear un schema llamado **raw** con la tabla `raw.disease_mortality`, a la cual le importaremos los datos de la fuente usada.
 
 ```bash
 # Ejecuta el script para crear el esquema de la base de datos
 \i raw_schema_creation.sql
 ```
+
+Posteriormente, corremos el siguiente comando para poder importar las filas del CSV en la tabla `raw.disease_mortality`
