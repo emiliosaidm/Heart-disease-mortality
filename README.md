@@ -69,7 +69,7 @@ Ahora, hay que ejecutar el siguiente script, el cual se encargará de crear un s
 
 ```bash
 # Ejecuta el script para crear el esquema de la base de datos
-\i raw_schema_creation.sql
+\i scripts/raw_schema_creation.sql
 ```
 
 Posteriormente, corremos el siguiente comando para poder importar las filas del CSV en la tabla `raw.disease_mortality`
@@ -106,7 +106,7 @@ Se deben de importar alrededor de 78792 tuplas.
 
 A través de un análisis extenso, se identificaron patrones útiles para poder hacer posteriormente una limpieza de datos.
 
-De las 20 columnas, no hay ningúna con identificadores únicos. De hecho, hasta este momento, si agrupamos los datos por algún identificador (i.e `location_id`), hay al rededor de 24 tuplas distintas por cada grupo.
+De las 20 columnas, no hay ningúna con identificadores únicos. De hecho, hasta este momento, si agrupamos los datos por algún identificador (i.e `location_id`), hay al menos 24 tuplas distintas por cada grupo.
 
 ---
 
