@@ -110,7 +110,7 @@ De las 20 columnas, ninguna contiene valores únicos. Al agrupar los datos por a
 
 El conjunto de datos incluye una columna relacionada con fechas, que representa el año de recopilación. Según la documentación, esta columna abarca un rango de años desde 2019 hasta 2021. Sin embargo, tras analizar los datos, se encontró que todas las tuplas corresponden únicamente al año 2020, sin registros de otros años.
 
-El set de datos tiene 4 columnas cuyo valor es numérico. Ya discutimos el año, que en realidad es un valor numérico, pero de las columnas numéricas, a continuación se muestra una tabla con los valores mínimos, máximos y promedios de `Year`, `Data_Value`, `LocationID`, `Y_lat`, `X_lon:
+El set de datos tiene 4 columnas cuyo valor es numérico. Ya discutimos el año, que en realidad es un valor numérico, pero de las columnas numéricas, a continuación se muestra una tabla con los valores mínimos, máximos y promedios de `Year`, `Data_Value`, `LocationID`, `Y_lat`, `X_lon`:
 
 | Columna         | Min          | Avg      | Max         |
 | --------------- | ------------ | -------- | ----------- |
