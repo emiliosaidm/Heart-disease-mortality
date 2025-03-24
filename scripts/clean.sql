@@ -1,12 +1,14 @@
-SELECT location_id, COUNT(location_id) AS concurrencia
-FROM raw.disease_mortality
-GROUP BY location_id
-HAVING  COUNT(location_id) = 0;
+WITH years AS (
+    SELECT year
+    FROM raw.disease_mortality
+    ORDER BY year ASC
+)
 
 SELECT *
-FROM raw.disease_mortality;
+FROM years
+WHERE year = ( SELECT MIN(year) FROM years);
 
-SELECT y_lat, x_lon, COUNT(*) AS concurrencia
+
+SELECT *
 FROM raw.disease_mortality
-GROUP BY y_lat, x_lon;
-
+ORDER BY year ASC;

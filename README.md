@@ -106,7 +106,9 @@ Se deben de importar alrededor de 78792 tuplas.
 
 A través de un análisis extenso, se identificaron patrones útiles para poder hacer posteriormente una limpieza de datos.
 
-De las 20 columnas, no hay ningúna con identificadores únicos. De hecho, hasta este momento, si agrupamos los datos por algún identificador (i.e `location_id`), hay al menos 24 tuplas distintas por cada grupo.
+De las 20 columnas, ninguna contiene valores únicos. Al agrupar los datos por algún identificador, como `location_id`, se observa que cada grupo cuenta con al menos 24 tuplas distintas.
+
+El conjunto de datos incluye una columna relacionada con fechas, que representa el año de recopilación. Según la documentación, esta columna abarca un rango de años desde 2019 hasta 2021. Sin embargo, tras analizar los datos, se encontró que todas las tuplas corresponden únicamente al año 2020, sin registros de otros años.
 
 ---
 
