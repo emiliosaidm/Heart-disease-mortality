@@ -120,8 +120,6 @@ El conjunto de datos incluye 4 columnas con valores numéricos. Aunque ya se dis
 | **y_lat**       | -14.30175426 | 37.90    | 69.30952908 |
 | **x_lon**       | -170.7194738 | -91.41   | 145.7512588 |
 
-## Análisis de Duplicados en Atributos Categóricos
-
 Analizamos si existen **valores duplicados** dentro de las columnas categóricas, es decir, aquellas que agrupan o clasifican datos, como:
 
 - `LocationAbbr`
@@ -139,9 +137,9 @@ Analizamos si existen **valores duplicados** dentro de las columnas categóricas
 
 En general, **sí se encontraron valores duplicados en varias columnas categóricas**. A continuación se resumen los hallazgos más relevantes:
 
-- **`LocationAbbr`** presenta múltiples repeticiones. El valor más frecuente es ***TX***, con **6,120 apariciones**, y en total se identificaron **57 abreviaciones distintas** con duplicados.
+- **`LocationAbbr`** presenta múltiples repeticiones. El valor más frecuente es **_TX_**, con **6,120 apariciones**, y en total se identificaron **57 abreviaciones distintas** con duplicados.
 
-- **`LocationDesc`** también mostró duplicados: hubo **2,022 repeticiones**, siendo ***Washington County*** el valor más frecuente, seguido por ***Jefferson County***, con una disminución gradual en el resto de valores.
+- **`LocationDesc`** también mostró duplicados: hubo **2,022 repeticiones**, siendo **_Washington County_** el valor más frecuente, seguido por **_Jefferson County_**, con una disminución gradual en el resto de valores.
 
 - En **`GeographicLevel`** solo hay tres categorías: **County**, **State** y **Nation**, con **77,424**, **1,344** y **24** apariciones respectivamente, lo cual indica una alta repetición.
 
@@ -150,8 +148,8 @@ En general, **sí se encontraron valores duplicados en varias columnas categóri
 - En **`Stratification2`**, se identificaron **8 categorías** distintas, todas con exactamente **9,849 repeticiones**.
 
 - En el caso de **`Data_Value_Type`**, hay dos valores predominantes:
-  - ***Age-adjusted, Spatially Smoothed, 3-year Average Rate*** con **77,424 apariciones**
-  - ***Age-adjusted, 3-year Average Rate*** con **1,368 apariciones**
+  - **_Age-adjusted, Spatially Smoothed, 3-year Average Rate_** con **77,424 apariciones**
+  - **_Age-adjusted, 3-year Average Rate_** con **1,368 apariciones**
 
 Por otro lado, el resto de las columnas categóricas analizadas **no presentan duplicados significativos** o los valores se distribuyen de forma única.
 
