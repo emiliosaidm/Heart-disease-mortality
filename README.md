@@ -76,30 +76,7 @@ Posteriormente, corremos el siguiente comando para poder importar las filas del 
 
 ```bash
 # Importamos el contenido del CSV
-\copy raw.disease_mortality (
-  year,
-  location_abbr,
-  location_description,
-  geographic_level,
-  data_source,
-  topic,
-  class,
-  data_value,
-  data_value_unit,
-  data_value_type,
-  data_value_footnote_symbol,
-  data_value_footnote,
-  stratification_category1,
-  stratification1,
-  stratification_category2,
-  stratification2,
-  topic_id,
-  location_id,
-  y_lat,
-  x_lon,
-  georeference
-) FROM 'path_to_csv_file.csv'
-  WITH (FORMAT CSV, HEADER true, DELIMITER ',');
+\copy raw.disease_mortality (year, location_abbr, location_description, geographic_level, data_source, topic, class, data_value data_value_unit, data_value_type, data_value_footnote_symbol, data_value_footnote, stratification_category1, stratification1, stratification_category2, stratification2, topic_id, location_id, y_lat, x_lon, georeference ) FROM 'path_to_csv_file.csv' WITH (FORMAT CSV, HEADER true, DELIMITER ',');
 ```
 
 Se deben de importar alrededor de 78792 tuplas.
