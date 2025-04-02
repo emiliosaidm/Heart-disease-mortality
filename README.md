@@ -45,7 +45,7 @@ En términos éticos, el análisis de estos datos considera la privacidad y anon
 
 ### Carga inicial de datos
 
-Primero, es necesario crear la base de datos para poder realizar la carga de la base de datos.
+Antes de comenzar, crea la base de datos destinada a la carga de información. Ten en cuenta que los comandos incluidos en este repositorio asumen que la carpeta **scripts** se encuentra en el directorio actual de la terminal. Si la ubicación es distinta, asegúrate de utilizar la ruta relativa o absoluta correcta para ejecutar los comandos.
 
 **Nota**: todo el trabajo será realizado por medio de PostgreSQL, puedes descagarlo desde el [sitio oficial](https://www.postgresql.org/download/).
 
@@ -176,16 +176,20 @@ Logrando conlcuir, que nuestro set de datos no cuenta con inconsitencias en ning
 
 ### Limpieza de datos
 
-En términos generales, el dataset se encuentra en buen estado, aunque se detectaron datos redundantes e innecesarios que se eliminarán para optimizar su estructura. Se eliminarán las siguientes columnas:
+### Limpieza de datos
 
-• La columna `Georeference`, ya que su información se encuentra desglosada en `Y_lat` y `X_lon`.
+En este paso se optimiza la estructura del dataset eliminando columnas redundantes e innecesarias:
 
-• Las columnas `Data_Value`, `Data_Value_Footnote` y `Data_Value_Footnote_Symbol`, debido a que la mayoría de sus registros son nulos o contienen valores uniformes (por ejemplo, “~” o “Insufficent Data”) que no aportan información relevante.
+• Se eliminará la columna `Georeference`, ya que la información geográfica se consolida en `Y_lat` y `X_lon`.
 
-Antes de iniciar, asegúrate de estar conectado a la base de datos en tu terminal de Postgres. Luego, ejecuta el siguiente comando:
+• Se eliminarán las columnas `Data_Value_Footnote` y `Data_Value_Footnote_Symbol`, pues contienen mayormente valores nulos o uniformes (por ejemplo, “~” o “Insufficent Data”) que no aportan información relevante.
+
+Las columnas `StratificationCategory1`, `Data_Source`, `Class`, `Topic`, `TopicId` y `StratificationCategory2` se conservarán, a pesar de presentar valores uniformes en el dataset actual, para permitir la incorporación de posibles variaciones en futuros datos.
+
+Antes de iniciar la limpieza, asegúrate de estar conectado a la base de datos en la terminal de Postgres. Luego, ejecuta el siguiente comando:
 
 ```bash
 \i scripts/clean.sql
 ```
 
-Este script eliminará las columnas redundantes y uniformemente nulas, optimizando la estructura de la base de datos. Además, estas no aportan información significante.
+Este script optimizará la estructura de la base de datos eliminando las columnas innecesarias. Creará un nuevo schema, llamado `clean`, en el estará la tabla `disease_mortality` con los cambios ya explicados.
