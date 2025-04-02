@@ -130,15 +130,57 @@ En general, **sí se encontraron valores duplicados en varias columnas categóri
 
 Por otro lado, el resto de las columnas categóricas analizadas **no presentan duplicados significativos** o los valores se distribuyen de forma única.
 
-Se compararon todas las columnas categóricas entre sí para detectar redundancias en su contenido. Algunas columnas son conceptualmente redundantes:
+Continunado, se compararon todas las columnas categóricas entre sí para **detectar redundancias en su contenido**. Algunas columnas son conceptualmente redundantes:
 
 - **`Year`**, se observa que muestra un único dato, este es el de "2020", dandonos como resultado que este set de datos, solo se enfoca en un mismo tiempo.
 - **`Class`**, **`Topic`** y **`TopicID`**, expresan la misma temática (enfermedades cardiovasculares y mortalidad por enfermedades del corazón).
 - **`Data_Value_Unit`** siempre indica la misma unidad de medida.
 - **`Data_Source`** tiene un solo valor constante.
 - **`Stratification_Category1`** y **`Stratification_Category2`** siempre contienen "Sex" y "Race/Ethnicity", respectivamente.
--  **`Data_value_footnote`** y  **`Data_value_footnote_symbol`**, son columnas de correlación, ambas comparten "null" y cada vez que aparece "~" en **`Data_value_footnote`**, viene acompañado de "Insufficient data" en **`Data_value_footnote_symbol`**.
+-  **`Data_value_footnote`** y  **`Data_value_footnote_symbol`**, son columnas de correlación, ambas comparten "null" y cada vez que aparece "~" en **`Data_value_footnote_symbol`**, viene acompañado de "Insufficient data" `Data_value_footnote`**.
 
+Ahora, al momento de identificar el **conteo de tuplas por categoria**, se decidío distinguirlos por etnia. Logrando identificar los siguientes datos:
 
+   | Etnicidad           | Total_Tuplas |
+   | ---------------     | ------------ | 
+   | **Hispanic**        |   **9849**   |
+   | ---------------     | ------------ |
+   | **Native Hawaiian   |              |
+   | or Other Pacific    |     9849     |
+   | Islander**          |              | 
+   | ---------------     | ------------ |
+   | **Asian**           |   **9849**   | 
+   | ---------------     | ------------ |
+   | **White**           |   **9849**   | 
+   | ---------------     | ------------ | 
+   | **More than one     |              | 
+   |  race**             |   **9849**   | 
+   | ---------------     | ------------ |
+   | **Black**           |   **9849**   |
+   | ---------------     | ------------ |
+   | **American Indian   |              |
+   | or Alaska Native**  |   **9849**   |
+   | ---------------     | ------------ |
+   | **Overall**         |   **9849**   |
 
+Obteniendo como resultado, la misma cantidad de cada uno de los grupos, obteniendo en total las **78,7982** tuplas de nuestro set de datos.
+
+Por otra parte, al realizar el **conteo de nulos en nuestro set de datos**, decidimos distinguirlo por cada categoria y después, obtener el resultado final. 
+La visualización de datos es la siguiente:
+
+| Columna                        | null_count   |
+| ---------------------------    | ------------ |
+| **data_value**                 |  **44,362**  |
+| **data_value_footnote**        |  **34,430**  |
+| **data_value_footnote_symbol** |  **34,430**  |
+| **y_lat**                      |      **24**  |
+| **x_lon**                      |      **24**  |
+| **georeference**               |      **24**  |
+
+Encontrando, un total de **113,294** valores **`NULL`** en este set de datos.
+
+Por último, al momento de analizar **inconsistencias en el set de datos**, buscamos encontrar, que no hubiera valores negativos en **`data_value`**, verificamos si existian valores inválidos en **`geographic_level`**, coordenadas inválidas y valores nulos en campos clave.
+
+Logrando conlcuir, que nuestro set de datos no cuenta con inconsitencias en ningún campo verificado por nosotros.
+ 
 ### Limpieza de datos
