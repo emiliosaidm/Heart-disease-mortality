@@ -190,4 +190,4 @@ Antes de iniciar la limpieza, asegúrate de estar conectado a la base de datos e
 \i scripts/clean.sql
 ```
 
-Este script optimizará la estructura de la base de datos eliminando las columnas innecesarias. Creará un nuevo schema, llamado `clean`, en el estará la tabla `disease_mortality` con los cambios ya explicados.
+Este script creará un nuevo schema, llamado `clean`, en el estará la tabla `disease_mortality` con los cambios ya explicados.
