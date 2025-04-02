@@ -76,7 +76,7 @@ Posteriormente, corremos el siguiente comando para poder importar las filas del 
 
 ```bash
 # Importamos el contenido del CSV
-\copy raw.disease_mortality (year, location_abbr, location_description, geographic_level, data_source, topic, class, data_value data_value_unit, data_value_type, data_value_footnote_symbol, data_value_footnote, stratification_category1, stratification1, stratification_category2, stratification2, topic_id, location_id, y_lat, x_lon, georeference ) FROM 'path_to_csv_file.csv' WITH (FORMAT CSV, HEADER true, DELIMITER ',');
+\copy raw.disease_mortality (year, location_abbr, location_description, geographic_level, data_source, topic, class, data_value data_value_unit, data_value_type, data_value_footnote_symbol, data_value_footnote, stratification_category1, stratification1, stratification_category2, stratification2, topic_id, location_id, y_lat, x_lon, georeference ) FROM 'path_to_csv_file.csv' WITH(FORMAT CSV, HEADER true, DELIMITER ',');
 ```
 
 Se deben de importar alrededor de 78792 tuplas.
@@ -130,4 +130,8 @@ En general, **sí se encontraron valores duplicados en varias columnas categóri
 
 Por otro lado, el resto de las columnas categóricas analizadas **no presentan duplicados significativos** o los valores se distribuyen de forma única.
 
+---
+
 ### Limpieza de datos
+
+En términos generales, el dataset se encuentra en buen estado. No obstante, se identificó información innecesaria y redundante que será eliminada. En concreto, se eliminarán las columnas `Georeference`, `Data_Value_Footnote` y `Data_Value_Footnote_Symbol`, ya que la mayoría de sus valores son nulos o presentan datos uniformes ("~" e "Insufficent Data").
