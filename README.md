@@ -145,15 +145,15 @@ Ahora, al momento de identificar el **conteo de tuplas por categoria**, se decid
    | ---------------     | ------------ | 
    | **Hispanic**        |   **9849**   |
    | **Native Hawaiian   |              |
-   | or Other Pacific    |     9849     |
+    or Other Pacific           9849     
    | Islander**          |              | 
    | **Asian**           |   **9849**   | 
    | **White**           |   **9849**   | 
    | **More than one     |              | 
-   |  race**             |   **9849**   | 
+      race**                 **9849**   
    | **Black**           |   **9849**   |
    | **American Indian   |              |
-   | or Alaska Native**  |   **9849**   |
+     or Alaska Native**      **9849**    
    | **Overall**         |   **9849**   |
 
 Obteniendo como resultado, la misma cantidad de cada uno de los grupos, obteniendo en total las **78,7982** tuplas de nuestro set de datos.
