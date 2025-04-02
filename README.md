@@ -176,8 +176,6 @@ Logrando conlcuir, que nuestro set de datos no cuenta con inconsitencias en ning
 
 ### Limpieza de datos
 
-### Limpieza de datos
-
 En este paso se optimiza la estructura del dataset eliminando columnas redundantes e innecesarias:
 
 • Se eliminará la columna `Georeference`, ya que la información geográfica se consolida en `Y_lat` y `X_lon`.
