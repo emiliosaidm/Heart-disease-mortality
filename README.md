@@ -141,20 +141,16 @@ Continunado, se compararon todas las columnas categóricas entre sí para **dete
 
 Ahora, al momento de identificar el **conteo de tuplas por categoria**, se decidío distinguirlos por etnia. Logrando identificar los siguientes datos:
 
-   | Etnicidad           | Total_Tuplas |
-   | ---------------     | ------------ | 
-   | **Hispanic**        |   **9849**   |
-   | **Native Hawaiian   |              |
-    or Other Pacific           9849     
-   | Islander**          |              | 
-   | **Asian**           |   **9849**   | 
-   | **White**           |   **9849**   | 
-   | **More than one     |              | 
-      race**                 **9849**   
-   | **Black**           |   **9849**   |
-   | **American Indian   |              |
-     or Alaska Native**      **9849**    
-   | **Overall**         |   **9849**   |
+   | Etnicidad                                   | Total_Tuplas |
+   | ----------------------------------------    | ------------ | 
+   | **Hispanic**                                |   **9849**   |
+   | **Native Hawaiian or Other Pacific Islanders|   **9849**   |
+   | **Asian**                                   |   **9849**   | 
+   | **White**                                   |   **9849**   | 
+   | **More than one  race**                     |   **9849**   |         
+   | **Black**                                   |   **9849**   |
+   | **American Indian or Alaska Native**        |   **9849**   |
+   | **Overall**                                 |   **9849**   |
 
 Obteniendo como resultado, la misma cantidad de cada uno de los grupos, obteniendo en total las **78,7982** tuplas de nuestro set de datos.
 
