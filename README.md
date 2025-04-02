@@ -172,9 +172,15 @@ Por último, al momento de analizar **inconsistencias en el set de datos**, busc
 
 Logrando conlcuir, que nuestro set de datos no cuenta con inconsitencias en ningún campo verificado por nosotros.
 
+---
+
 ### Limpieza de datos
 
-En términos generales, el dataset se encuentra en buen estado. No obstante, se identificó información innecesaria y redundante que será eliminada. En concreto, se eliminarán las columnas `Georeference`, `Data_Value_Footnote` y `Data_Value_Footnote_Symbol`, ya que la mayoría de sus valores son nulos o presentan datos uniformes ("~" e "Insufficent Data").
+En términos generales, el dataset se encuentra en buen estado, aunque se detectaron datos redundantes e innecesarios que se eliminarán para optimizar su estructura. Se eliminarán las siguientes columnas:
+
+• La columna `Georeference`, ya que su información se encuentra desglosada en `Y_lat` y `X_lon`.
+
+• Las columnas `Data_Value`, `Data_Value_Footnote` y `Data_Value_Footnote_Symbol`, debido a que la mayoría de sus registros son nulos o contienen valores uniformes (por ejemplo, “~” o “Insufficent Data”) que no aportan información relevante.
 
 Antes de iniciar, asegúrate de estar conectado a la base de datos en tu terminal de Postgres. Luego, ejecuta el siguiente comando:
 
@@ -182,4 +188,4 @@ Antes de iniciar, asegúrate de estar conectado a la base de datos en tu termina
 \i scripts/clean.sql
 ```
 
-Este script eliminará las columnas redundantes y uniformemente nulas, optimizando la estructura de la base de datos.
+Este script eliminará las columnas redundantes y uniformemente nulas, optimizando la estructura de la base de datos. Además, estas no aportan información significante.
