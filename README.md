@@ -130,4 +130,15 @@ En general, **sí se encontraron valores duplicados en varias columnas categóri
 
 Por otro lado, el resto de las columnas categóricas analizadas **no presentan duplicados significativos** o los valores se distribuyen de forma única.
 
+Se compararon todas las columnas categóricas entre sí para detectar redundancias en su contenido. Algunas columnas son conceptualmente redundantes:
+
+- **`Year`**, se observa que muestra un único dato, este es el de "2020", dandonos como resultado que este set de datos, solo se enfoca en un mismo tiempo.
+- **`Class`**, **`Topic`** y **`TopicID`**, expresan la misma temática (enfermedades cardiovasculares y mortalidad por enfermedades del corazón).
+- **`Data_Value_Unit`** siempre indica la misma unidad de medida.
+- **`Data_Source`** tiene un solo valor constante.
+- **`Stratification_Category1`** y **`Stratification_Category2`** siempre contienen "Sex" y "Race/Ethnicity", respectivamente.
+-  **`Data_value_footnote`** y  **`Data_value_footnote_symbol`**, son columnas de correlación, ambas comparten "null" y cada vez que aparece "~" en **`Data_value_footnote`**, viene acompañado de "Insufficient data" en **`Data_value_footnote_symbol`**.
+
+
+
 ### Limpieza de datos
