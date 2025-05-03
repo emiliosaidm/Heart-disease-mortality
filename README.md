@@ -203,22 +203,18 @@ Proponemos las siguientes variables de relación, con sus respectivas dependenci
 
 #### 1. Data Recollection
 
-Esta variable de relación modela los datos, unidades y otras características de la información recolectada sobre enfermedades cardiovasculares.
+Esta Variable de Relación modela los datos, unidades y otros atributos recolectados sobre enfermedades cardiovasculares.
 
-Sea $E_{dr} = \text{{} id,\,unit,\,value,\,type,\,source,\,year,\,locationid\ \text{}}$ el encabezado de la relvar.
+Sea  
+`E_dr = { id, unit, value, type, source, year, location_id }`  
+el encabezado de la relvar.
 
 La única dependencia funcional no trivial es:  
-$$
-DF_{1}: \{id\} \;\rightarrow\; \{unit,\,value,\,type,\,source,\,year,\,location_{id}\}.
-$$
+`DF1: { id } → { unit, value, type, source, year, location_id }`
 
-Es trivial puesto que el determinante no es subconjunto del dependiente.
+Esta dependencia es trivial en el sentido de FNBC, porque el determinante `{ id }` no es subconjunto de los atributos dependientes, y su cierre es:  
+`{ id }⁺ = { id, unit, value, type, source, year, location_id } = E_dr`
 
-Además, cumple la FNBC porque  
-$$
-\{id\}^+ \;=\; \{id,\,unit,\,value,\,type,\,source,\,year,\,location_{id}\} \;=\; E_{dr}.
-$$
-
-Al no existir dependencias multivaluadas, esta relvar está en 4FN.
+Al no existir dependencias multivaluadas, la relvar `Data Recollection` ya está en 4FN.  
 
 
