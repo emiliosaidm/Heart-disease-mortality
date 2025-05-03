@@ -45,7 +45,7 @@ En términos éticos, el análisis de estos datos considera la privacidad y anon
 
 ### Carga inicial de datos
 
-Antes de comenzar, crea la base de datos destinada a la carga de información. Ten en cuenta que los comandos incluidos en este repositorio asumen que la carpeta **scripts** se encuentra en el directorio actual de la terminal. Si la ubicación es distinta, asegúrate de utilizar la ruta relativa o absoluta correcta para ejecutar los comandos.
+Ten en cuenta que los comandos incluidos en este repositorio asumen que la carpeta **scripts** se encuentra en el directorio actual de la terminal. Si la ubicación es distinta, asegúrate de utilizar la ruta relativa o absoluta correcta para ejecutar los comandos.
 
 **Nota**: todo el trabajo será realizado por medio de PostgreSQL, puedes descagarlo desde el [sitio oficial](https://www.postgresql.org/download/).
 
