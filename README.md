@@ -199,40 +199,39 @@ Este script creará un nuevo schema, llamado `clean`, en el estará la tabla `di
 
 ### Normalización de Datos (4FN)
 
-A continuación se definen las variables de relación y sus dependencias funcionales para normalizar el conjunto de datos depurado sobre enfermedades cardiovasculares.
+**Objetivo:** Definir las relvars y dependencias funcionales necesarias para garantizar la cuarta forma normal (4FN) en el conjunto de datos de enfermedades cardiovasculares.
 
 #### 1. Data Recollection
 
-La relvar **Data Recollection** modela la información recolectada acerca de enfermedades cardiovasculares, incluyendo:
+La relvar `Data_Recollection` incluye los siguientes atributos:
 
-* **unit**: unidad de medida
-* **value**: valor registrado
-* **type**: tipo de medición
-* **source**: origen de los datos
-* **year**: año de la medición
-* **location\_id**: identificador de la ubicación
+* `id`
+* `unit` (unidad de medida)
+* `value` (valor registrado)
+* `type` (tipo de medición)
+* `source` (origen de los datos)
+* `year` (año de la medición)
+* `location_id` (identificador de la ubicación)
 
 Sea:
 
-$$
-E_{\mathrm{recollection}} = \{ \mathrm{id}, \mathrm{unit}, \mathrm{value}, \mathrm{type}, \mathrm{source}, \mathrm{year}, \mathrm{location\_id} \}
-$$
+```latex
+E_{\mathrm{recollection}} = \{ \mathrm{id},\ \mathrm{unit},\ \mathrm{value},\ \mathrm{type},\ \mathrm{source},\ \mathrm{year},\ \mathrm{location\_id} \}
+```
 
 La única dependencia funcional no trivial es:
 
-$$
-\mathrm{DF}_1:\; \{\mathrm{id}\} \rightarrow \{\mathrm{unit}, \mathrm{value}, \mathrm{type}, \mathrm{source}, \mathrm{year}, \mathrm{location\_id}\}
-$$
+```latex
+\mathrm{DF}_1:\; \{\mathrm{id}\} \rightarrow \{\mathrm{unit},\ \mathrm{value},\ \mathrm{type},\ \mathrm{source},\ \mathrm{year},\ \mathrm{location\_id}\}
+```
 
-* **Forma Normal de Boyce-Codd (FNBC)**: se cumple porque el determinante $\{\mathrm{id}\}$ no es subconjunto de los atributos dependientes.
-* **Cierre**:
+1. **FNBC:** Se cumple porque el determinante `\{id\}` no es subconjunto de los atributos dependientes.
+2. **Cierre:**
 
-$$
-\{\mathrm{id}\}^+ = \{\mathrm{id}, \mathrm{unit}, \mathrm{value}, \mathrm{type}, \mathrm{source}, \mathrm{year}, \mathrm{location\_id}\} = E_{\mathrm{recollection}}
-$$
-
-* Al no existir dependencias multivaluadas, la relación se encuentra en **4FN**.
-
+   ```latex
+   \{\mathrm{id}\}^+ = \{\mathrm{id},\ \mathrm{unit},\ \mathrm{value},\ \mathrm{type},\ \mathrm{source},\ \mathrm{year},\ \mathrm{location\_id}\} = E_{\mathrm{recollection}}
+   ```
+3. **4FN:** Al no haber dependencias multivaluadas, `Data_Recollection` está en cuarta forma normal.
 
 
 
