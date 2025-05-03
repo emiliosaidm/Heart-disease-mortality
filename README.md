@@ -227,7 +227,7 @@ La única dependencia funcional no trivial es:
 DF_{1}: \{ id \} \rightarrow \{ unit,\; value,\; type,\; source,\; year,\; location\_id \}
 ```
 
-**FNBC**: Se cumple porque el determinante `\{ id \}` no es subconjunto de los atributos dependientes.
+**FNBC**: Se cumple porque el determinante no es subconjunto de los atributos dependientes.
 
 **Cierre**:
 
@@ -244,11 +244,11 @@ DF_{1}: \{ id \} \rightarrow \{ unit,\; value,\; type,\; source,\; year,\; locat
 La relvar `Location` modela las ubicaciones geográficas donde se recolectaron datos:
 
 * `id`
-* `abbreviation` (abreviatura de la ubicación)
-* `description` (nombre o descripción completa)
-* `y_lat` (latitud)
-* `x_lat` (longitud)
-* `geographic_level` (nivel geográfico: país, estado, municipio, etc.)
+* `abbreviation`
+* `description`
+* `y_lat`
+* `x_lat`
+* `geographic_level`
 
 Sea:
 
@@ -262,7 +262,7 @@ Dependencia funcional no trivial:
 DF_{2}: \{ id \} \rightarrow \{ abbreviation,\; description,\; y\_lat,\; x\_lat,\; geographic\_level \}
 ```
 
-**FNBC**: Se cumple porque `\{ id \}` no es subconjunto de los atributos dependientes.
+**FNBC**: Se cumple porque el determinante no es subconjunto de los atributos dependientes.
 
 **Cierre**:
 
@@ -279,8 +279,8 @@ DF_{2}: \{ id \} \rightarrow \{ abbreviation,\; description,\; y\_lat,\; x\_lat,
 La relvar `Stratification` define las categorías de estratificación utilizadas en el análisis:
 
 * `id`
-* `category` (nombre de la categoría)
-* `value` (valor asociado o descripción detallada)
+* `category`
+* `value`
 
 Sea:
 
@@ -294,7 +294,7 @@ Dependencia funcional no trivial:
 DF_{3}: \{ id \} \rightarrow \{ category,\; value \}
 ```
 
-**FNBC**: Se cumple porque `\{ id \}` no es subconjunto de los atributos dependientes.
+**FNBC**: Se cumple porque el determinante no es subconjunto de los atributos dependientes.
 
 **Cierre**:
 
@@ -326,7 +326,7 @@ Dependencia funcional no trivial:
 DF_{4}: \{ id \} \rightarrow \{ data\_recollection\_id,\; stratification\_id \}
 ```
 
-**FNBC**: Se cumple porque `\{ id \}` no es subconjunto de los atributos dependientes.
+**FNBC**: Se cumple porque el determinante no es subconjunto de los atributos dependientes.
 
 **Cierre**:
 
