@@ -218,7 +218,7 @@ La relvar `Data_Recollection` incluye los siguientes atributos:
 Sea:
 
 ```math
-E_{\mathrm{recollection}} = \{ id,\; unit,\; value,\; type,\; source,\; year,\; location\_id \}
+E_{\mathrm{data_recollection}} = \{ id,\; unit,\; value,\; type,\; source,\; year,\; location\_id \}
 ```
 
 La única dependencia funcional no trivial es:
@@ -226,16 +226,15 @@ La única dependencia funcional no trivial es:
 ```math
 DF_{1}: \{ id \} \rightarrow \{ unit,\; value,\; type,\; source,\; year,\; location\_id \}
 ```
+**FNBC**: Se cumple porque el determinante no es subconjunto de los atributos dependientes.
 
-1. **FNBC**: Se cumple porque el determinante `\{ id \}` no es subconjunto de los atributos dependientes.
-
-2. **Cierre**:
+**Cierre**:
 
    ```math
-   \{ id \}^+ = \{ id,\; unit,\; value,\; type,\; source,\; year,\; location\_id \} = E_{\mathrm{recollection}}
+   \{ id \}^+ = \{ id,\; unit,\; value,\; type,\; source,\; year,\; location\_id \} = E_{\mathrm{data_recollection}}
    ```
 
-3. **4FN**: Al no existir dependencias multivaluadas, `Data_Recollection` se encuentra en cuarta forma normal.
+**4FN**: Al no existir dependencias multivaluadas, `Data_Recollection` se encuentra en cuarta forma normal.
 
 
 
