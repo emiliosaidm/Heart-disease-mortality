@@ -197,41 +197,45 @@ Este script creará un nuevo schema, llamado `clean`, en el estará la tabla `di
 
 ---
 
-### Normalización de Datos (4FN)
+<!-- Archivo: normalizacion.md -->
+
+# Normalización de Datos (4FN)
 
 **Objetivo:** Definir las relvars y dependencias funcionales necesarias para garantizar la cuarta forma normal (4FN) en el conjunto de datos de enfermedades cardiovasculares.
 
-#### 1. Data Recollection
+## 1. Data Recollection
 
 La relvar `Data_Recollection` incluye los siguientes atributos:
 
 * `id`
-* `unit` (unidad de medida)
-* `value` (valor registrado)
-* `type` (tipo de medición)
-* `source` (origen de los datos)
-* `year` (año de la medición)
-* `location_id` (identificador de la ubicación)
+* `unit` (unidad de medida)
+* `value` (valor registrado)
+* `type` (tipo de medición)
+* `source` (origen de los datos)
+* `year` (año de la medición)
+* `location_id` (identificador de la ubicación)
 
 Sea:
 
-```latex
-E_{\mathrm{recollection}} = \{ \mathrm{id},\ \mathrm{unit},\ \mathrm{value},\ \mathrm{type},\ \mathrm{source},\ \mathrm{year},\ \mathrm{location\_id} \}
+```math
+E_{\mathrm{recollection}} = \{ id,\; unit,\; value,\; type,\; source,\; year,\; location\_id \}
 ```
 
 La única dependencia funcional no trivial es:
 
-```latex
-\mathrm{DF}_1:\; \{\mathrm{id}\} \rightarrow \{\mathrm{unit},\ \mathrm{value},\ \mathrm{type},\ \mathrm{source},\ \mathrm{year},\ \mathrm{location\_id}\}
+```math
+DF_{1}: \{ id \} \rightarrow \{ unit,\; value,\; type,\; source,\; year,\; location\_id \}
 ```
 
-1. **FNBC:** Se cumple porque el determinante `\{id\}` no es subconjunto de los atributos dependientes.
-2. **Cierre:**
+1. **FNBC**: Se cumple porque el determinante `\{ id \}` no es subconjunto de los atributos dependientes.
 
-   ```latex
-   \{\mathrm{id}\}^+ = \{\mathrm{id},\ \mathrm{unit},\ \mathrm{value},\ \mathrm{type},\ \mathrm{source},\ \mathrm{year},\ \mathrm{location\_id}\} = E_{\mathrm{recollection}}
+2. **Cierre**:
+
+   ```math
+   \{ id \}^+ = \{ id,\; unit,\; value,\; type,\; source,\; year,\; location\_id \} = E_{\mathrm{recollection}}
    ```
-3. **4FN:** Al no haber dependencias multivaluadas, `Data_Recollection` está en cuarta forma normal.
+
+3. **4FN**: Al no existir dependencias multivaluadas, `Data_Recollection` se encuentra en cuarta forma normal.
 
 
 
