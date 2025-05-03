@@ -199,39 +199,22 @@ Este script creará un nuevo schema, llamado `clean`, en el estará la tabla `di
 
 ### Normalización
 
-Proponemos las siguientes variables de relación, junto con sus dependencias funcionales, para normalizar el conjunto de datos depurado.
+Proponemos las siguientes variables de relación, con sus repectivas dependencias funcionales, para normalizar el set de datos ya limpio.
 
 #### 1. **Data Recollection**
+Esta Variable de Relación modela los datos, unidades y otras cuestiones de los datos que se recolectaron 
+de las enfermedades cardiovasculares. 
 
-Esta relvar recoge los datos sobre enfermedades cardiovasculares, incluyendo unidades, origen y ubicación.
+Sea $E_{\text{data_recollection}} = \{\text{id},\text{ unit},\text{ value},\text{ type},\text{ source},\text{ year}, \text{ location_id}\}$
+el encabezado de la Relvar.
 
-Sea  
-\[
-E_{\text{data\_recollection}}
-= \{\,
-\text{id},\,\text{unit},\,\text{value},\,\text{type},\,\text{source},\,\text{year},\,\text{location\_id}
-\}
-\]
-el encabezado de la relvar.
+La única dependencia funcional no trivial que se mantiene es la siguiente:
 
-La única dependencia funcional no trivial es:
-\[
-DF_1: \{\text{id}\}
-\;\longrightarrow\;
-\{\,
-\text{unit},\,\text{value},\,\text{type},\,\text{source},\,\text{year},\,\text{location\_id}
-\}.
-\]
+$DF_1: \{\text{id} \} \rightarrow \{\text{unit},\text{ value},\text{ type},\text{ source},\text{ year}, \text{ location_id}\}$
 
-Cumple **FNBC** porque:
-\[
-\{\text{id}\}^+
-= \{\,
-\text{id},\,\text{unit},\,\text{value},\,\text{type},\,\text{source},\,\text{year},\,\text{location\_id}
-\}
-= E_{\text{data\_recollection}}.
-\]
+Es trivial puesto que el determinante no es subconjunto del dependiente.
 
-Al no existir dependencias multivaluadas, esta relvar está en **4FN**.
+Además, cumple la **FNBC** ya que $\{\text{id} \}^+ = \{\text{id}, \text{ unit},\text{ value},\text{ type},\text{ source},\text{ year}, \text{ location_id}\} = E_{\text{data_recollection}}$.
 
+Puesto que no hay dependencias multivaluadas, ésta ya se encuentra en 4FN.
 
