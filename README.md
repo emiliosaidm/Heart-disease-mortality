@@ -205,7 +205,7 @@ Proponemos las siguientes variables de relación, con sus repectivas dependencia
 Esta Variable de Relación modela los datos, unidades y otras cuestiones de los datos que se recolectaron 
 de las enfermedades cardiovasculares. 
 
-Sea $E_{\text{data_recollection}} = \{\text{id},\text{ unit},\text{ value},\text{ type},\text{ source},\text{ year}, \text{ locationid}\}$
+Sea $E_{\text{data\_recollection}} = \{\text{id},\text{ unit},\text{ value},\text{ type},\text{ source},\text{ year}, \text{ locationid}\}$
 el encabezado de la Relvar.
 
 La única dependencia funcional no trivial que se mantiene es la siguiente:
