@@ -205,7 +205,7 @@ Proponemos las siguientes variables de relación, con sus repectivas dependencia
 Esta Variable de Relación modela los datos, unidades y otras cuestiones de los datos que se recolectaron 
 de las enfermedades cardiovasculares. 
 
-Sea $E_{\text{data_recollection}} = \{\text{id},\text{ unit},\text{ value},\text{ type},\text{ source},\text{ year}, \text{ location_id}\}$
+Sea $E_{\text{dr}} = \{\text{id},\text{ unit},\text{ value},\text{ type},\text{ source},\text{ year}, \text{ location_id}\}$
 el encabezado de la Relvar.
 
 La única dependencia funcional no trivial que se mantiene es la siguiente:
@@ -214,7 +214,7 @@ $DF_1: \{\text{id} \} \rightarrow \{\text{unit},\text{ value},\text{ type},\text
 
 Es trivial puesto que el determinante no es subconjunto del dependiente.
 
-Además, cumple la **FNBC** ya que $\{\text{id} \}^+ = \{\text{id}, \text{ unit},\text{ value},\text{ type},\text{ source},\text{ year}, \text{ location_id}\} = E_{\text{data_recollection}}$.
+Además, cumple la **FNBC** ya que $\{\text{id} \}^+ = \{\text{id}, \text{ unit},\text{ value},\text{ type},\text{ source},\text{ year}, \text{ location_id}\} = E_{\text{dr}}$.
 
 Puesto que no hay dependencias multivaluadas, ésta ya se encuentra en 4FN.
 
