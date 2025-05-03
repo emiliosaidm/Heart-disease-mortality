@@ -199,8 +199,6 @@ Este script creará un nuevo schema, llamado `clean`, en el estará la tabla `di
 
 # Normalización de Datos (4FN)
 
-**Objetivo:** Definir las relvars y dependencias funcionales necesarias para garantizar la cuarta forma normal (4FN) en el conjunto de datos de enfermedades cardiovasculares.
-
 > **Nota:** En cada relvar, la clave primaria `id` es la única dependencia funcional no trivial, ya que determina todos los demás atributos. Además, no existen dependencias multivaluadas, pues no hay atributos repetidos o grupos independientes de valores.
 
 ## 1. Data Recollection
