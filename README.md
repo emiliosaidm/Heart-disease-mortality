@@ -334,7 +334,8 @@ DF_{4}: \{ id \} \rightarrow \{ data\_recollection\_id,\; stratification\_id \}
 
 **4FN**: No existe dependencia multivaluada.
 
-El diagrama entidad-relación se queda de la siguiente manera:
+---
+### Diagrama entidad-relación
 
 ![Proyecto final BD](https://github.com/user-attachments/assets/7075bed3-e520-4530-9731-33e66f4b8a9d)
 
