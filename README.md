@@ -202,19 +202,30 @@ Este script creará un nuevo schema, llamado `clean`, en el estará la tabla `di
 Proponemos las siguientes variables de relación, con sus repectivas dependencias funcionales, para normalizar el set de datos ya limpio.
 
 #### 1. **Data Recollection**
-Esta Variable de Relación modela los datos, unidades y otras cuestiones de los datos que se recolectaron 
-de las enfermedades cardiovasculares. 
 
-Sea $E_{\text{data_recollection}} = \{\text{id},\text{ unit},\text{ value},\text{ type},\text{ source},\text{ year}, \text{ location_id}\}$
-el encabezado de la Relvar.
+Esta variable de relación modela los datos recolectados sobre enfermedades cardiovasculares, incluyendo su unidad, valor, tipo, fuente, año y localización.
 
-La única dependencia funcional no trivial que se mantiene es la siguiente:
+Sea:
 
-$DF_1: \{\text{id} \} \rightarrow \{\text{unit},\text{ value},\text{ type},\text{ source},\text{ year}, \text{ location_id}\}$
+$$
+E_{\texttt{data\_recollection}} = \{\texttt{id},\ \texttt{unit},\ \texttt{value},\ \texttt{type},\ \texttt{source},\ \texttt{year},\ \texttt{location\_id}\}
+$$
 
-Es trivial puesto que el determinante no es subconjunto del dependiente.
+el encabezado de la relvar.
 
-Además, cumple la **FNBC** ya que $\{\text{id} \}^+ = \{\text{id}, \text{ unit},\text{ value},\text{ type},\text{ source},\text{ year}, \text{ location_id}\} = E_{\text{data_recollection}}$.
+La única dependencia funcional no trivial que se conserva es:
 
-Puesto que no hay dependencias multivaluadas, ésta ya se encuentra en 4FN.
+$$
+DF_1:\ \{\texttt{id}\} \rightarrow \{\texttt{unit},\ \texttt{value},\ \texttt{type},\ \texttt{source},\ \texttt{year},\ \texttt{location\_id}\}
+$$
+
+Esta no es trivial, ya que el determinante no está contenido en el conjunto dependiente.
+
+Además, cumple con la **Forma Normal de Boyce-Codd (FNBC)**, pues:
+
+$$
+\{\texttt{id}\}^+ = \{\texttt{id},\ \texttt{unit},\ \texttt{value},\ \texttt{type},\ \texttt{source},\ \texttt{year},\ \texttt{location\_id}\} = E_{\texttt{data\_recollection}}
+$$
+
+Dado que no existen dependencias multivaluadas, esta relación también está en **Cuarta Forma Normal (4FN)**.
 
