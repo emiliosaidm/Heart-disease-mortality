@@ -197,23 +197,42 @@ Este script creará un nuevo schema, llamado `clean`, en el estará la tabla `di
 
 ---
 
-### Normalización
+### Normalización de Datos (4FN)
 
-Proponemos las siguientes variables de relación, con sus respectivas dependencias funcionales, para normalizar el conjunto de datos previamente depurado.
+A continuación se definen las variables de relación y sus dependencias funcionales para normalizar el conjunto de datos depurado sobre enfermedades cardiovasculares.
 
 #### 1. Data Recollection
 
-Esta relación modela la información recolectada sobre enfermedades cardiovasculares, incluyendo unidades, valores, tipo, origen, año y ubicación.
+La relvar **Data Recollection** modela la información recolectada acerca de enfermedades cardiovasculares, incluyendo:
 
-Sea E = { id, unit, value, type, source, year, location_id } el encabezado de la relación.
+* **unit**: unidad de medida
+* **value**: valor registrado
+* **type**: tipo de medición
+* **source**: origen de los datos
+* **year**: año de la medición
+* **location\_id**: identificador de la ubicación
 
-La única dependencia funcional no trivial es  
-DF1: { id } → { unit, value, type, source, year, location_id }
+Sea:
 
-Cumple la FNBC porque el determinante { id } no está contenido en los atributos dependientes y su cierre es  
-{ id }⁺ = { id, unit, value, type, source, year, location_id } = E
+$$
+E_{\mathrm{recollection}} = \{ \mathrm{id}, \mathrm{unit}, \mathrm{value}, \mathrm{type}, \mathrm{source}, \mathrm{year}, \mathrm{location\_id} \}
+$$
 
-Al no existir dependencias multivaluadas, la relación Data Recollection se encuentra en 4FN.
+La única dependencia funcional no trivial es:
+
+$$
+\mathrm{DF}_1:\; \{\mathrm{id}\} \rightarrow \{\mathrm{unit}, \mathrm{value}, \mathrm{type}, \mathrm{source}, \mathrm{year}, \mathrm{location\_id}\}
+$$
+
+* **Forma Normal de Boyce-Codd (FNBC)**: se cumple porque el determinante $\{\mathrm{id}\}$ no es subconjunto de los atributos dependientes.
+* **Cierre**:
+
+$$
+\{\mathrm{id}\}^+ = \{\mathrm{id}, \mathrm{unit}, \mathrm{value}, \mathrm{type}, \mathrm{source}, \mathrm{year}, \mathrm{location\_id}\} = E_{\mathrm{recollection}}
+$$
+
+* Al no existir dependencias multivaluadas, la relación se encuentra en **4FN**.
+
 
 
 
