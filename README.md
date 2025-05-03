@@ -199,22 +199,26 @@ Este script creará un nuevo schema, llamado `clean`, en el estará la tabla `di
 
 ### Normalización
 
-Proponemos las siguientes variables de relación, con sus repectivas dependencias funcionales, para normalizar el set de datos ya limpio.
+Proponemos las siguientes variables de relación, con sus respectivas dependencias funcionales, para normalizar el set de datos ya limpio.
 
-#### 1. **Data Recollection**
-Esta Variable de Relación modela los datos, unidades y otras cuestiones de los datos que se recolectaron 
-de las enfermedades cardiovasculares. 
+#### 1. Data Recollection
 
-Sea $E{\text{dr}} = \{\text{id},\text{ unit},\text{ value},\text{ type},\text{ source},\text{ year}, \text{ locationid}\}$
-el encabezado de la Relvar.
+Esta variable de relación modela los datos, unidades y otras características de la información recolectada sobre enfermedades cardiovasculares.
 
-La única dependencia funcional no trivial que se mantiene es la siguiente:
+Sea $E_{dr} = \{id,\,unit,\,value,\,type,\,source,\,year,\,location_{id}\}$ el encabezado de la relvar.
 
-$DF_1: \{\text{id} \} \rightarrow \{\text{unit},\text{ value},\text{ type},\text{ source},\text{ year}, \text{ location_id}\}$
+La única dependencia funcional no trivial es:  
+$$
+DF_{1}: \{id\} \;\rightarrow\; \{unit,\,value,\,type,\,source,\,year,\,location_{id}\}.
+$$
 
 Es trivial puesto que el determinante no es subconjunto del dependiente.
 
-Además, cumple la **FNBC** ya que $\{\text{id} \}^+ = \{\text{id}, \text{ unit},\text{ value},\text{ type},\text{ source},\text{ year}, \text{ location_id}\} = E_{\text{dr}}$.
+Además, cumple la FNBC porque  
+$$
+\{id\}^+ \;=\; \{id,\,unit,\,value,\,type,\,source,\,year,\,location_{id}\} \;=\; E_{dr}.
+$$
 
-Puesto que no hay dependencias multivaluadas, ésta ya se encuentra en 4FN.
+Al no existir dependencias multivaluadas, esta relvar está en 4FN.
+
 
