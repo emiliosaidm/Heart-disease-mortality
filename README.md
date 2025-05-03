@@ -199,22 +199,21 @@ Este script creará un nuevo schema, llamado `clean`, en el estará la tabla `di
 
 ### Normalización
 
-Proponemos las siguientes variables de relación, con sus respectivas dependencias funcionales, para normalizar el set de datos ya limpio.
+Proponemos las siguientes variables de relación, con sus respectivas dependencias funcionales, para normalizar el conjunto de datos previamente depurado.
 
 #### 1. Data Recollection
 
-Esta Variable de Relación modela los datos, unidades y otros atributos recolectados sobre enfermedades cardiovasculares.
+Esta relación modela la información recolectada sobre enfermedades cardiovasculares, incluyendo unidades, valores, tipo, origen, año y ubicación.
 
-Sea  
-`E_dr = { id, unit, value, type, source, year, location_id }`  
-el encabezado de la relvar.
+Sea E = { id, unit, value, type, source, year, location_id } el encabezado de la relación.
 
-La única dependencia funcional no trivial es:  
-`DF1: { id } → { unit, value, type, source, year, location_id }`
+La única dependencia funcional no trivial es  
+DF1: { id } → { unit, value, type, source, year, location_id }
 
-Esta dependencia es trivial en el sentido de FNBC, porque el determinante `{ id }` no es subconjunto de los atributos dependientes, y su cierre es:  
-`{ id }⁺ = { id, unit, value, type, source, year, location_id } = E_dr`
+Cumple la FNBC porque el determinante { id } no está contenido en los atributos dependientes y su cierre es  
+{ id }⁺ = { id, unit, value, type, source, year, location_id } = E
 
-Al no existir dependencias multivaluadas, la relvar `Data Recollection` ya está en 4FN.  
+Al no existir dependencias multivaluadas, la relación Data Recollection se encuentra en 4FN.
+
 
 
