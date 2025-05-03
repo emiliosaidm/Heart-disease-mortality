@@ -205,7 +205,7 @@ Proponemos las siguientes variables de relación, con sus respectivas dependenci
 
 Esta variable de relación modela los datos, unidades y otras características de la información recolectada sobre enfermedades cardiovasculares.
 
-Sea $E_{dr} = \{id,\,unit,\,value,\,type,\,source,\,year,\,location_{id}\}$ el encabezado de la relvar.
+Sea $E_{dr} = \text{{} id,\,unit,\,value,\,type,\,source,\,year,\,locationid\ \text{}}$ el encabezado de la relvar.
 
 La única dependencia funcional no trivial es:  
 $$
