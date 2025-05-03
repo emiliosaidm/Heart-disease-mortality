@@ -183,6 +183,8 @@ En este paso se optimiza la estructura del dataset eliminando columnas redundant
 • Se eliminará la columna `Class`,`Topic` y `TopicId`, puesto que para todo el Dataset sus valores son "Heart Disease Mortality", "Cardiovascular Diseases" y "T2" respectivamente. 
 A pesar de que el atributo `DataSource` también mantiene un único valor desde que se modelaron los datos, esta es más probable que pudiera cambiar en alguna ocasión.
 
+• Se eliminará la columna `LocationId`, ya que durante el proceso de normalización se incluirá una nueva. Además, la columna actual probablemente hace referencia a una tabla distinta de localizaciones perteneciente a la organización que recopiló los datos.
+
 • Se eliminarán las columnas `Data_Value_Footnote` y `Data_Value_Footnote_Symbol`, pues contienen mayormente valores nulos o uniformes (por ejemplo, “~” o “Insufficent Data”) que no aportan información relevante.
  
 Antes de iniciar la limpieza, asegúrate de estar conectado a la base de datos en la terminal de Postgres. Luego, ejecuta el siguiente comando:
@@ -192,3 +194,27 @@ Antes de iniciar la limpieza, asegúrate de estar conectado a la base de datos e
 ```
 
 Este script creará un nuevo schema, llamado `clean`, en el estará la tabla `disease_mortality` con los cambios ya explicados.
+
+---
+
+### Normalización
+
+Proponemos las siguientes variables de relación, con sus repectivas dependencias funcionales, para normalizar el set de datos ya limpio.
+
+#### 1. **Data Recollection**
+Esta Variable de Relación modela los datos, unidades y otras cuestiones de los datos que se recolectaron 
+de las enfermedades cardiovasculares. 
+
+Sea $E_{\text{data_recollection}} = \{\text{id},\text{ unit},\text{ value},\text{ type},\text{ source},\text{ year}, \text{ location_id}\}$
+el encabezado de la Relvar.
+
+La única dependencia funcional no trivial que se mantiene es la siguiente:
+
+$DF_1: \{\text{id} \} \rightarrow \{\text{unit},\text{ value},\text{ type},\text{ source},\text{ year}, \text{ location_id}\}$
+
+Es trivial puesto que el determinante no es subconjunto del dependiente.
+
+Además, cumple la **FNBC** ya que $\{\text{id} \}^+ = \{\text{id}, \text{ unit},\text{ value},\text{ type},\text{ source},\text{ year}, \text{ location_id}\} = E_{\text{data_recollection}}$.
+
+Puesto que no hay dependencias multivaluadas, ésta ya se encuentra en 4FN.
+

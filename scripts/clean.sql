@@ -17,7 +17,6 @@ CREATE TABLE clean.disease_mortality (
     stratification1 VARCHAR(10),
     stratification_category2 VARCHAR(50),
     stratification2 VARCHAR(50),
-    location_id INTEGER,
     y_lat DOUBLE PRECISION,
     x_lon DOUBLE PRECISION
 );
@@ -35,7 +34,6 @@ INSERT INTO clean.disease_mortality(
   stratification1,
   stratification_category2,
   stratification2,
-  location_id,
   y_lat,
   x_lon
 )
@@ -51,15 +49,11 @@ SELECT year,
   stratification1,
   stratification_category2,
   stratification2,
-  location_id,
   y_lat,
   x_lon
-FROM raw.disease_mortality;
+FROM clean.disease_mortality;
 
 
 SELECT *
 FROM clean.disease_mortality;
 
-SELECT *
-FROM clean.disease_mortality
-WHERE "topic" ='Cardiovascular Diseases';
