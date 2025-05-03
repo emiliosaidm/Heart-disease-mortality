@@ -10,8 +10,6 @@ CREATE TABLE clean.disease_mortality (
     location_description VARCHAR(100),
     geographic_level VARCHAR(50),
     data_source VARCHAR(10),
-    class VARCHAR(50),
-    topic VARCHAR(100),
     data_value DOUBLE PRECISION,
     data_value_unit VARCHAR(150),
     data_value_type VARCHAR(150),
@@ -19,7 +17,6 @@ CREATE TABLE clean.disease_mortality (
     stratification1 VARCHAR(10),
     stratification_category2 VARCHAR(50),
     stratification2 VARCHAR(50),
-    topic_id VARCHAR(5),
     location_id INTEGER,
     y_lat DOUBLE PRECISION,
     x_lon DOUBLE PRECISION
@@ -31,8 +28,6 @@ INSERT INTO clean.disease_mortality(
   location_description,
   geographic_level,
   data_source,
-  class,
-  topic,
   data_value,
   data_value_unit,
   data_value_type,
@@ -40,7 +35,6 @@ INSERT INTO clean.disease_mortality(
   stratification1,
   stratification_category2,
   stratification2,
-  topic_id,
   location_id,
   y_lat,
   x_lon
@@ -50,8 +44,6 @@ SELECT year,
   location_description,
   geographic_level,
   data_source,
-  class,
-  topic,
   data_value,
   data_value_unit,
   data_value_type,
@@ -59,8 +51,15 @@ SELECT year,
   stratification1,
   stratification_category2,
   stratification2,
-  topic_id,
   location_id,
   y_lat,
   x_lon
 FROM raw.disease_mortality;
+
+
+SELECT *
+FROM clean.disease_mortality;
+
+SELECT *
+FROM clean.disease_mortality
+WHERE "topic" ='Cardiovascular Diseases';

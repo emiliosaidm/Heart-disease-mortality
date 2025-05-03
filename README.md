@@ -180,10 +180,11 @@ En este paso se optimiza la estructura del dataset eliminando columnas redundant
 
 • Se eliminará la columna `Georeference`, ya que la información geográfica se consolida en `Y_lat` y `X_lon`.
 
+• Se eliminará la columna `Class`,`Topic` y `TopicId`, puesto que para todo el Dataset sus valores son "Heart Disease Mortality", "Cardiovascular Diseases" y "T2" respectivamente. 
+A pesar de que el atributo `DataSource` también mantiene un único valor desde que se modelaron los datos, esta es más probable que pudiera cambiar en alguna ocasión.
+
 • Se eliminarán las columnas `Data_Value_Footnote` y `Data_Value_Footnote_Symbol`, pues contienen mayormente valores nulos o uniformes (por ejemplo, “~” o “Insufficent Data”) que no aportan información relevante.
-
-Las columnas `StratificationCategory1`, `Data_Source`, `Class`, `Topic`, `TopicId` y `StratificationCategory2` se conservarán, a pesar de presentar valores uniformes en el dataset actual, para permitir la incorporación de posibles variaciones en futuros datos.
-
+ 
 Antes de iniciar la limpieza, asegúrate de estar conectado a la base de datos en la terminal de Postgres. Luego, ejecuta el siguiente comando:
 
 ```bash
