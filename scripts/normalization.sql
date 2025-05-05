@@ -19,7 +19,7 @@ CREATE TABLE normalized.data_recollection(
     value double precision NOT NULL,
     type varchar(200) NOT NULL,
     source varchar(200) NOT NULL,
-    year varchar(4) NOT NULL,
+    year int,
     stratification_category1 varchar(100),
     stratification_category2 varchar(100),
     stratification1 varchar(100),
@@ -49,7 +49,7 @@ SELECT DISTINCT location_abbr, location_description, y_lat, x_lon, geographic_le
 FROM clean.disease_mortality;
 
 INSERT INTO normalized.data_recollection(unit, value, type, source, year, stratification_category1, stratification1, stratification_category2, stratification2, location_id)
-SELECT data_value_unit, data_value, data_value_type, data_source, year,  clean.disease_mortality.stratification_category1, clean.disease_mortality.stratification1, clean.disease_mortality.stratification_category2, clean.disease_mortality.stratification2, normalized.location.id
+SELECT data_value_unit, data_value, data_value_type, data_source, year::INT,  clean.disease_mortality.stratification_category1, clean.disease_mortality.stratification1, clean.disease_mortality.stratification_category2, clean.disease_mortality.stratification2, normalized.location.id
 FROM clean.disease_mortality
 JOIN normalized.location ON
     normalized.location.abbreviation = clean.disease_mortality.location_abbr
