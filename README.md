@@ -199,7 +199,7 @@ Este script creará un nuevo schema, llamado `clean`, en el estará la tabla `di
 
 ---
 
-# Normalización de Datos (4FN)
+## Normalización de Datos (4FN)
 
 > **Nota:** En cada relvar, la clave primaria `id` es la única dependencia funcional no trivial, ya que determina todos los demás atributos. Además, no existen dependencias multivaluadas, pues no hay atributos repetidos o grupos independientes de valores.
 
@@ -352,3 +352,6 @@ asociarlas y popularlas. El nuevo schema de datos estará guardado en el schema 
 
 ![Proyecto final BD](https://github.com/user-attachments/assets/92884df0-1948-4a0a-9cbe-61524be522b6)
 
+---
+
+## Consultas
