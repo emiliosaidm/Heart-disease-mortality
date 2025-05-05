@@ -336,10 +336,12 @@ DF_{4}: \{ id \} \rightarrow \{ data\_recollection\_id,\; stratification\_id \}
 
 **4FN**: No existe dependencia multivaluada.
 
-Para normalizar los datos, ejecuta el siguiente comando:
+Para normalizar los datos, ejecuta el siguiente comando, el cual se encrgará de crear las tablas,
+asociarlas y popularlas. El nuevo schema de datos estará guardado en el schema **normalized**.
 ```bash
 \i scripts/normalization.sql
 ```
+
 
 ---
 ### Diagrama entidad-relación 

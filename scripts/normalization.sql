@@ -76,4 +76,3 @@ DROP COLUMN stratification1,
 DROP COLUMN stratification2,
 DROP COLUMN stratification_category1,
 DROP COLUMN stratification_category2;
-
