@@ -346,5 +346,5 @@ asociarlas y popularlas. El nuevo schema de datos estará guardado en el schema 
 ---
 ### Diagrama entidad-relación 
 
-![Proyecto final BD](https://github.com/user-attachments/assets/fa4cacfc-af67-4cf4-8908-3e1238c703be)
+![Proyecto final BD](https://github.com/user-attachments/assets/92884df0-1948-4a0a-9cbe-61524be522b6)
 
