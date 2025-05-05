@@ -52,8 +52,3 @@ SELECT year,
   y_lat,
   x_lon
 FROM clean.disease_mortality;
-
-
-SELECT *
-FROM clean.disease_mortality;
-
