@@ -52,3 +52,6 @@ SELECT year,
   y_lat,
   x_lon
 FROM clean.disease_mortality;
+
+DELETE FROM clean.disease_mortality
+WHERE data_value IS NULL;

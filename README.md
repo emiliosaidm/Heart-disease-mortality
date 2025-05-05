@@ -187,6 +187,8 @@ A pesar de que el atributo `DataSource` también mantiene un único valor desde 
 
 • Se eliminarán las columnas `Data_Value_Footnote` y `Data_Value_Footnote_Symbol`, pues contienen mayormente valores nulos o uniformes (por ejemplo, “~” o “Insufficent Data”) que no aportan información relevante.
  
+Existen aproximadamente 88,724 tuplas en las que el atributo `DataValue` es nulo. Para los fines de este proyecto, dichas tuplas no aportan información útil, ya que únicamente indican la localidad sin proporcionar el número de mortalidades. Por lo tanto, no tiene sentido conservarlas y se eliminarán del conjunto de datos.
+
 Antes de iniciar la limpieza, asegúrate de estar conectado a la base de datos en la terminal de Postgres. Luego, ejecuta el siguiente comando:
 
 ```bash
@@ -334,8 +336,12 @@ DF_{4}: \{ id \} \rightarrow \{ data\_recollection\_id,\; stratification\_id \}
 
 **4FN**: No existe dependencia multivaluada.
 
+Para normalizar los datos, ejecuta el siguiente comando:
+```bash
+\i scripts/normalization.sql
+```
+
 ---
 ### Diagrama entidad-relación 
 
 ![Proyecto final BD (1)](https://github.com/user-attachments/assets/2b4b4207-d27d-4d0f-9809-c4b0d750d69b)
-
