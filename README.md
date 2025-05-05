@@ -227,7 +227,8 @@ La única dependencia funcional no trivial es:
 DF_{1}: \{ id \} \rightarrow \{ unit,\; value,\; type,\; source,\; year,\; location\_id \}
 ```
 
-**FNBC**: Se cumple porque el determinante no es subconjunto de los atributos dependientes.
+**FNBC**: Se cumple porque el determinante no es subconjunto de los atributos dependientes y 
+el determinante es una superllave, como se ve a continuación en el cierre.
 
 **Cierre**:
 
@@ -262,7 +263,8 @@ Dependencia funcional no trivial:
 DF_{2}: \{ id \} \rightarrow \{ abbreviation,\; description,\; y\_lat,\; x\_lat,\; geographic\_level \}
 ```
 
-**FNBC**: Se cumple porque el determinante no es subconjunto de los atributos dependientes.
+**FNBC**: Se cumple porque el determinante no es subconjunto de los atributos dependientes y 
+el determinante es una superllave, como se ve a continuación en el cierre.
 
 **Cierre**:
 
@@ -270,7 +272,7 @@ DF_{2}: \{ id \} \rightarrow \{ abbreviation,\; description,\; y\_lat,\; x\_lat,
    \{ id \}^+ = E_{\mathrm{location}}
    ```
 
-**4FN**: No hay dependencias multivaluadas.
+**4FN**: Al no existir dependencias multivaluadas, `Location` se encuentra en cuarta forma normal.
 
 ---
 
@@ -294,7 +296,8 @@ Dependencia funcional no trivial:
 DF_{3}: \{ id \} \rightarrow \{ category,\; value \}
 ```
 
-**FNBC**: Se cumple porque el determinante no es subconjunto de los atributos dependientes.
+**FNBC**: Se cumple porque el determinante no es subconjunto de los atributos dependientes y 
+el determinante es una superllave, como se ve a continuación en el cierre.
 
 **Cierre**:
 
@@ -302,7 +305,7 @@ DF_{3}: \{ id \} \rightarrow \{ category,\; value \}
    \{ id \}^+ = E_{\mathrm{stratification}}
    ```
 
-**4FN**: No hay dependencias multivaluadas.
+**4FN**: Al no existir dependencias multivaluadas, `Stratification` se encuentra en cuarta forma normal.
 
 ---
 
@@ -326,7 +329,8 @@ Dependencia funcional no trivial:
 DF_{4}: \{ id \} \rightarrow \{ data\_recollection\_id,\; stratification\_id \}
 ```
 
-**FNBC**: Se cumple porque el determinante no es subconjunto de los atributos dependientes.
+**FNBC**: Se cumple porque el determinante no es subconjunto de los atributos dependientes y 
+el determinante es una superllave, como se ve a continuación en el cierre.
 
 **Cierre**:
 
@@ -334,7 +338,7 @@ DF_{4}: \{ id \} \rightarrow \{ data\_recollection\_id,\; stratification\_id \}
    \{ id \}^+ = E_{\mathrm{hd_strat}}
    ```
 
-**4FN**: No existe dependencia multivaluada.
+**4FN**: Al no existir dependencias multivaluadas, `Heart_Disease_Stratification` se encuentra en cuarta forma normal.
 
 Para normalizar los datos, ejecuta el siguiente comando, el cual se encrgará de crear las tablas,
 asociarlas y popularlas. El nuevo schema de datos estará guardado en el schema **normalized**.
