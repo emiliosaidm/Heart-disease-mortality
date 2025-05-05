@@ -344,4 +344,5 @@ Para normalizar los datos, ejecuta el siguiente comando:
 ---
 ### Diagrama entidad-relación 
 
-![Proyecto final BD (1)](https://github.com/user-attachments/assets/2b4b4207-d27d-4d0f-9809-c4b0d750d69b)
+![Proyecto final BD](https://github.com/user-attachments/assets/fa4cacfc-af67-4cf4-8908-3e1238c703be)
+
