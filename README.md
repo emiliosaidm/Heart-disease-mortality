@@ -481,3 +481,15 @@ FROM metrics AS m1
 JOIN metrics AS m2 ON m1.id = m2.id
 WHERE m1.data_type = '3-year Average Rate' AND m2.data_type = 'Spatially Smoothed';
 ```
+La siguiente query da los valores promedios de una latitud y longitud dada.
+```sql
+-- Valores promedios en latitud y longitud.
+SELECT l.x_lon,
+       l.y_lat,
+       AVG(dr.value) AS avg_value
+FROM normalized.data_recollection AS dr
+         JOIN normalized.location AS l
+              ON dr.location_id = l.id
+GROUP BY l.x_lon, l.y_lat;
+```
+El resultado se visualizó mediante un *heatmap* interactivo generado con [Kepler](https://kepler-preview.foursquare.com/), lo cual permite identificar claramente las zonas con mayor cantidad de muertes. Como se puede observar, los estados del este de Estados Unidos, así como Puerto Rico, son las regiones más afectadas por fallecimientos relacionados con complicaciones cardíacas.

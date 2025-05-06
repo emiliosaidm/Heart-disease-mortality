@@ -52,5 +52,13 @@ FROM metrics AS m1
 JOIN metrics AS m2 ON m1.id = m2.id
 WHERE m1.data_type = '3-year Average Rate' AND m2.data_type = 'Spatially Smoothed';
 
---
+-- Valores promedios en latitud y longitud.
+SELECT l.x_lon,
+       l.y_lat,
+       AVG(dr.value) AS avg_value
+FROM normalized.data_recollection AS dr
+         JOIN normalized.location AS l
+              ON dr.location_id = l.id
+GROUP BY l.x_lon, l.y_lat;
+
 
