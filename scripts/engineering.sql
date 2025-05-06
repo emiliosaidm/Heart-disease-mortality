@@ -39,3 +39,18 @@ WHERE str.category = 'Race/Ethnicity'
 GROUP BY str.value
 ORDER BY AVG(dr.value) DESC;
 
+-- Correlación entre dos datos: 'Age-adjusted' y '3-year Average Rate'
+WITH metrics AS (
+    SELECT dr.id, dt.value AS data_type, dr.value
+    FROM normalized.data_recollection AS dr
+    JOIN normalized.data_type_recollection AS d_type_r ON d_type_r.data_recollection_id = dr.id
+    JOIN normalized.data_type AS dt ON d_type_r.data_type_id = dt.id
+)
+
+SELECT corr(m1.value, m2.value)
+FROM metrics AS m1
+JOIN metrics AS m2 ON m1.id = m2.id
+WHERE m1.data_type = '3-year Average Rate' AND m2.data_type = 'Spatially Smoothed';
+
+--
+
