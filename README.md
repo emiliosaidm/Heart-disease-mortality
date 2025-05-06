@@ -447,6 +447,11 @@ ORDER BY SUM(dr.value) DESC;
 ```
 
 ```sql
-
+-- Contar los tipos de datos en la recolección de datos.
+SELECT d_type.value, COUNT(*)
+FROM normalized.data_recollection AS dr
+JOIN normalized.data_type_recollection AS d_type_r ON dr.id = d_type_r.data_type_id
+JOIN normalized.data_type AS d_type ON d_type.id = d_type_r.data_type_id
+GROUP BY d_type.value;
 ```
 
