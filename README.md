@@ -493,3 +493,7 @@ FROM normalized.data_recollection AS dr
 GROUP BY l.x_lon, l.y_lat;
 ```
 El resultado se visualizó mediante un *heatmap* interactivo generado con [Kepler](https://kepler-preview.foursquare.com/), lo cual permite identificar claramente las zonas con mayor cantidad de muertes. Como se puede observar, los estados del este de Estados Unidos, así como Puerto Rico, son las regiones más afectadas por fallecimientos relacionados con complicaciones cardíacas.
+
+![kepler gl](https://github.com/user-attachments/assets/8e079131-2658-4e36-84bc-94d6c938b419)
+
+
