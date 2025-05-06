@@ -488,8 +488,18 @@ SELECT l.x_lon,
        l.y_lat,
        AVG(dr.value) AS avg_value
 FROM normalized.data_recollection AS dr
-         JOIN normalized.location AS l
-              ON dr.location_id = l.id
+JOIN normalized.location AS l ON dr.location_id = l.id
 GROUP BY l.x_lon, l.y_lat;
 ```
 El resultado se visualizó mediante un *heatmap* interactivo generado con [Kepler](https://kepler-preview.foursquare.com/), lo cual permite identificar claramente las zonas con mayor cantidad de muertes. Como se puede observar, los estados del este de Estados Unidos, así como Puerto Rico, son las regiones más afectadas por fallecimientos relacionados con complicaciones cardíacas.
+
+La siguiente consulta busca determinar si hay una correlación con la longitud y latitud de donde los datos se recolectaron con el número de muertos
+de esa localidad en específico.
+
+Se pudo ver que hay una correlación del 5% en longitud y una correlación inversamente proporcional en latitud del 12% aproximadamente.
+```sql
+SELECT corr(dr.value, l.x_lon) AS corr_long, corr(dr.value, l.y_lat) AS corr_lat
+FROM normalized.data_recollection AS dr
+JOIN normalized.location AS l
+ON dr.location_id = l.id;
+```

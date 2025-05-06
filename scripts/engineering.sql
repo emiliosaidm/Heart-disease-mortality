@@ -57,8 +57,14 @@ SELECT l.x_lon,
        l.y_lat,
        AVG(dr.value) AS avg_value
 FROM normalized.data_recollection AS dr
-         JOIN normalized.location AS l
-              ON dr.location_id = l.id
+JOIN normalized.location AS l ON dr.location_id = l.id
 GROUP BY l.x_lon, l.y_lat;
 
+-- Correlación entre latitud, longitud y el valor de los datos recolectados en esa área
+SELECT
+  corr(dr.value, l.x_lon) AS corr_long,
+  corr(dr.value, l.y_lat) AS corr_lat
+FROM normalized.data_recollection AS dr
+JOIN normalized.location AS l
+  ON dr.location_id = l.id;
 
