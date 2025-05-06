@@ -495,11 +495,12 @@ El resultado se visualizó mediante un *heatmap* interactivo generado con [Keple
 
 ![kepler gl](https://github.com/user-attachments/assets/8e079131-2658-4e36-84bc-94d6c938b419)
 
-La siguiente consulta busca determinar si hay una correlación con la longitud y latitud de donde los datos se recolectaron con el número de muertos
+La siguiente consulta busca determinar si hay una correlación de la longitud y latitud de donde los datos se recolectaron con el número de muertos
 de esa localidad en específico.
 
 Se pudo ver que hay una correlación del 5% en longitud y una correlación inversamente proporcional en latitud del 12% aproximadamente.
 ```sql
+-- Correlación de la longitud y latitud de donde los datos se recolectaron con el número de muertos
 SELECT corr(dr.value, l.x_lon) AS corr_long, corr(dr.value, l.y_lat) AS corr_lat
 FROM normalized.data_recollection AS dr
 JOIN normalized.location AS l
