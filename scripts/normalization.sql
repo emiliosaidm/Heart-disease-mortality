@@ -35,11 +35,23 @@ CREATE TABLE normalized.stratification(
 );
 
 DROP TABLE IF EXISTS normalized.heart_disease_stratification;
-
 CREATE TABLE normalized.heart_disease_stratification(
     id BIGSERIAL PRIMARY KEY,
     data_recollection_id BIGINT NOT NULL CONSTRAINT fk_data_recollection_id REFERENCES normalized.data_recollection (id) ON DELETE CASCADE,
     stratification_id BIGINT NOT NULL CONSTRAINT fk_stratification_id REFERENCES normalized.stratification (id) ON DELETE CASCADE
+);
+
+DROP TABLE IF EXISTS normalized.data_type;
+CREATE TABLE normalized.data_type(
+    id BIGSERIAL PRIMARY KEY,
+    value VARCHAR(200) NOT NULL
+);
+
+DROP TABLE IF EXISTS normalized.data_type_recollection;
+CREATE TABLE normalized.data_type_recollection(
+    id BIGSERIAL PRIMARY KEY,
+    data_recollection_id BIGINT CONSTRAINT fk_data_recollection_id REFERENCES normalized.data_recollection (id) ON DELETE CASCADE,
+    data_type_id BIGINT CONSTRAINT fk_data_type_id REFERENCES normalized.data_type (id) ON DELETE CASCADE
 );
 
 -- Copiar los datos a la forma normalizada
@@ -71,8 +83,23 @@ JOIN normalized.stratification
     ON (normalized.data_recollection.stratification_category1 = normalized.stratification.category AND normalized.data_recollection.stratification1 =  normalized.stratification.value)
     OR (normalized.data_recollection.stratification_category2 = normalized.stratification.category AND normalized.data_recollection.stratification2 =  normalized.stratification.value);
 
+INSERT INTO normalized.data_type(value)
+SELECT DISTINCT TRIM(unnest(string_to_array(clean.disease_mortality.data_value_type, ',')))
+FROM clean.disease_mortality;
+
+INSERT INTO normalized.data_type_recollection(data_recollection_id, data_type_id)
+SELECT DISTINCT
+  dr.id AS data_recollection_id,
+  dt.id AS data_type_id
+FROM normalized.data_recollection dr,
+LATERAL unnest(string_to_array(dr.type, ',')) AS raw_type,
+normalized.data_type dt
+WHERE TRIM(raw_type) = TRIM(dt.value)
+ORDER BY dr.id;
+
 ALTER TABLE normalized.data_recollection
 DROP COLUMN stratification1,
 DROP COLUMN stratification2,
 DROP COLUMN stratification_category1,
-DROP COLUMN stratification_category2;
+DROP COLUMN stratification_category2,
+DROP COLUMN type;
