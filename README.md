@@ -455,3 +455,13 @@ JOIN normalized.data_type AS d_type ON d_type.id = d_type_r.data_type_id
 GROUP BY d_type.value;
 ```
 
+```sql
+-- Promedio por categoria de estratificación
+SELECT str.value, AVG(dr.value)
+FROM normalized.data_recollection AS dr
+LEFT JOIN normalized.heart_disease_stratification AS hds ON hds.data_recollection_id = dr.id
+LEFT JOIN normalized.stratification AS str ON str.id = hds.stratification_id
+WHERE str.category = 'Race/Ethnicity'
+GROUP BY str.value
+ORDER BY AVG(dr.value) DESC;
+```
