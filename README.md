@@ -399,7 +399,7 @@ Cierre:
 
 **4FN:** No hay dependencias multivaluadas, por lo que también está en cuarta forma normal.
 
-Para normalizar los datos, ejecuta el siguiente comando, el cual se encrgará de crear las tablas,
+Para normalizar los datos, ejecuta el siguiente comando, el cual se encargará de crear las tablas,
 asociarlas y popularlas. El nuevo schema de datos estará guardado en el schema **normalized**.
 ```bash
 \i scripts/normalization.sql
