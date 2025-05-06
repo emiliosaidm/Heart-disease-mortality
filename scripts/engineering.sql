@@ -23,7 +23,7 @@ WHERE str.category = 'Race/Ethnicity'
 GROUP BY str.value
 ORDER BY SUM(dr.value) DESC;
 
--- Contar los tipos de datos en la recolección de datos.
+-- Contar los tipos de datos de la recolección de datos.
 SELECT d_type.value, COUNT(*)
 FROM normalized.data_recollection AS dr
 JOIN normalized.data_type_recollection AS d_type_r ON dr.id = d_type_r.data_type_id
@@ -60,7 +60,7 @@ FROM normalized.data_recollection AS dr
 JOIN normalized.location AS l ON dr.location_id = l.id
 GROUP BY l.x_lon, l.y_lat;
 
--- Correlación entre latitud, longitud y el valor de los datos recolectados en esa área
+-- Correlación de la longitud y latitud de donde los datos se recolectaron con el número de muertos.
 SELECT
   corr(dr.value, l.x_lon) AS corr_long,
   corr(dr.value, l.y_lat) AS corr_lat

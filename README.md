@@ -415,6 +415,8 @@ asociarlas y popularlas. El nuevo schema de datos estará guardado en el schema 
 
 ## Consultas
 
+La siguiente query calcula el promedio por localidad de muertes. Se puede ver que Martinsville City es la ciudad que más muertes tiene en promedio.
+
 ```sql
 -- Promedio muertes por enfermedades cardiacas por localidad
 SELECT normalized.location.description AS location, AVG(normalized.data_recollection.value)
@@ -423,6 +425,7 @@ JOIN normalized.location ON normalized.data_recollection.location_id = normalize
 GROUP BY  normalized.location.id, normalized.location.description
 ORDER BY AVG(normalized.data_recollection.value) DESC;
 ```
+La siguiente query suma las muertes agrupando por sexo, permitiendo ver que mueren más hombres que mujeres y sexos no descritos.
 
 ```sql
 -- Contar el número total de fallecimintos de hombres y mujeres
@@ -434,6 +437,8 @@ WHERE str.category = 'Sex'
 GROUP BY str.value
 ORDER BY SUM(dr.value) DESC;
 ```
+La siguiente consulta suma todas las muertes de todas las localidades y las agrupa por Raza. Se puede determinar que la categoría 'Overall' es la que más muertes suma, seguido de la raza
+blanca y luego la negra.
 
 ```sql
 -- Contar el número total de fallecimientos por raza.
@@ -445,15 +450,19 @@ WHERE str.category = 'Race/Ethnicity'
 GROUP BY str.value
 ORDER BY SUM(dr.value) DESC;
 ```
+La siguiente query cuenta el número de tipos de datos recolectados; "3-year Average Rate" y "Age-adjusted" son los más frecuentes, con una periodicidad de 68860, mientras que 
+Spatially Smoothed con 66862.
 
 ```sql
--- Contar los tipos de datos en la recolección de datos.
+-- Contar los tipos de datos de la recolección de datos.
 SELECT d_type.value, COUNT(*)
 FROM normalized.data_recollection AS dr
 JOIN normalized.data_type_recollection AS d_type_r ON dr.id = d_type_r.data_type_id
 JOIN normalized.data_type AS d_type ON d_type.id = d_type_r.data_type_id
 GROUP BY d_type.value;
 ```
+La siguiente consulta busca determinar el promedio por categoría de estratificación, donde se pudo determinar que en promedio mueren más personas de la raza Negra que cualquier otra,
+seguido de nativos de islas en Hawaii, en una zona determinada.
 
 ```sql
 -- Promedio por categoria de estratificación
@@ -500,7 +509,7 @@ de esa localidad en específico.
 
 Se pudo ver que hay una correlación del 5% en longitud y una correlación inversamente proporcional en latitud del 12% aproximadamente.
 ```sql
--- Correlación de la longitud y latitud de donde los datos se recolectaron con el número de muertos
+-- Correlación de la longitud y latitud de donde los datos se recolectaron con el número de muertos.
 SELECT corr(dr.value, l.x_lon) AS corr_long, corr(dr.value, l.y_lat) AS corr_lat
 FROM normalized.data_recollection AS dr
 JOIN normalized.location AS l
