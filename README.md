@@ -201,7 +201,7 @@ Este script creará un nuevo schema, llamado `clean`, en el estará la tabla `di
 
 # Normalización de Datos (4FN)
 
-A continuación se listan, para cada relvar del diagrama, sus dependencias funcionales no triviales y sus dependencias multivaluadas no triviales.
+A continuación se listan, para cada relvar, sus dependencias funcionales no triviales y sus dependencias multivaluadas no triviales.
 
 ---
 
