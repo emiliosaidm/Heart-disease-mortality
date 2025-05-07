@@ -201,203 +201,169 @@ Este script creará un nuevo schema, llamado `clean`, en el estará la tabla `di
 
 # Normalización de Datos (4FN)
 
-> **Nota:** En cada relvar, la clave primaria `id` es la única dependencia funcional no trivial, ya que determina todos los demás atributos. Además, no existen dependencias multivaluadas, pues no hay grupos independientes de valores. Los campos que indican relaciones (`*_id`) actúan como claves foráneas que garantizan la integridad referencial.
-
-## 1. Data Recollection
-
-La relvar `Data_Recollection` almacena las mediciones recolectadas, con su unidad, valor, tipo, fuente, año y ubicación:
-
-* `id`
-* `unit` (unidad de medida)
-* `value` (valor registrado)
-* `type` (tipo de medición)
-* `source` (origen de los datos)
-* `year` (año de la medición)
-* `location_id` (FK a `Location`)
-
-Sea:
-
-```math
-E_{\mathrm{recollection}} = \{ id,\, unit,\, value,\, type,\, source,\, year,\, location\_id \}
-```
-
-Dependencia funcional no trivial:
-
-```math
-DF_{1}: \{ id \} \rightarrow \{ unit,\, value,\, type,\, source,\, year,\, location\_id \}
-```
-
-**FNBC:** Se cumple porque el determinante es una superllave (su cierre incluye todos los atributos) y no es subconjunto de sus dependientes.
-
-Cierre:
-
-```math
-\{ id \}^+ = \{ id,\, unit,\, value,\, type,\, source,\, year,\, location\_id \} = E_{\mathrm{recollection}}
-```
-
-**4FN:** Al no haber dependencias multivaluadas, `Data_Recollection` está en cuarta forma normal.
+A continuación se listan, para cada relvar del diagrama, sus dependencias funcionales no triviales y sus dependencias multivaluadas no triviales.
 
 ---
 
-## 2. Location
+## 1. Data\_Recollection
 
-La relvar `Location` modela los lugares geográficos donde se recolectaron datos:
+**Atributos**
 
-* `id`
-* `abbreviation` (abreviatura de país o región)
-* `description` (descripción de la ubicación)
-* `y_lat` (latitud)
-* `x_lat` (longitud)
-* `geographic_level` (nivel geográfico: nacional, regional, local, etc.)
-
-Sea:
-
-```math
-E_{\mathrm{location}} = \{ id,\, abbreviation,\, description,\, y\_lat,\, x\_lat,\, geographic\_level \}
+```
+{id, unit, value, type, source, year, location_id}
 ```
 
-Dependencia funcional no trivial:
+**Clave primaria**
 
-```math
-DF_{2}: \{ id \} \rightarrow \{ abbreviation,\, description,\, y\_lat,\, x\_lat,\, geographic\_level \}
+```
+{id}
 ```
 
-**FNBC:** Se cumple porque `id` es superllave determinando todos los atributos.
+**Dependencias funcionales no triviales**
 
-Cierre:
+* `{id} → {unit, value, type, source, year, location_id}`
 
-```math
-\{ id \}^+ = E_{\mathrm{location}}
-```
+**Dependencias multivaluadas no triviales**
 
-**4FN:** Sin dependencias multivaluadas, cumple cuarta forma normal.
+* Ninguna
 
 ---
 
-## 3. Stratification
+## 2. Data\_Type
 
-La relvar `Stratification` define las categorías y valores de estratificación utilizados en el análisis:
+**Atributos**
 
-* `id`
-* `category` (categoría de estrato)
-* `value` (valor asociado)
-
-Sea:
-
-```math
-E_{\mathrm{stratification}} = \{ id,\, category,\, value \}
+```
+{id, value}
 ```
 
-Dependencia funcional no trivial:
+**Clave primaria**
 
-```math
-DF_{3}: \{ id \} \rightarrow \{ category,\, value \}
+```
+{id}
 ```
 
-**FNBC:** Se cumple al ser `id` superllave.
+**Dependencias funcionales no triviales**
 
-Cierre:
+* `{id} → {value}`
 
-```math
-\{ id \}^+ = E_{\mathrm{stratification}}
-```
+**Dependencias multivaluadas no triviales**
 
-**4FN:** No hay multidependencias, así que está en 4FN.
+* Ninguna
 
 ---
 
-## 4. Heart Disease Stratification
+## 3. Location
 
-La relvar `Heart_Disease_Stratification` asocia cada registro de `Data_Recollection` con un estrato de enfermedad cardíaca:
+**Atributos**
 
-* `id`
-* `data_recollection_id` (FK a `Data_Recollection`)
-* `stratification_id` (FK a `Stratification`)
-
-Sea:
-
-```math
-E_{\mathrm{hd\_strat}} = \{ id,\, data\_recollection\_id,\, stratification\_id \}
+```
+{id, abbreviation, description, y_lat, x_lat, geographic_level}
 ```
 
-Dependencia funcional no trivial:
+**Clave primaria**
 
-```math
-DF_{4}: \{ id \} \rightarrow \{ data\_recollection\_id,\, stratification\_id \}
+```
+{id}
 ```
 
-**FNBC:** Cumple porque `id` determina ambos FKs y es superllave.
+**Dependencias funcionales no triviales**
 
-Cierre:
+* `{id} → {abbreviation, description, y_lat, x_lat, geographic_level}`
 
-```math
-\{ id \}^+ = E_{\mathrm{hd\_strat}}
-```
+**Dependencias multivaluadas no triviales**
 
-**4FN:** Al no existir dependencias multivaluadas, está en cuarta forma normal.
+* Ninguna
 
 ---
 
-## 5. Data Type
+## 4. Stratification
 
-La relvar `Data_Type` contiene los tipos de datos que pueden acompañar a una recolección:
+**Atributos**
 
-* `id`
-* `value` (nombre o descripción del tipo de dato)
-
-Sea:
-
-```math
-E_{\mathrm{data\_type}} = \{ id,\, value \}
+```
+{id, category, value}
 ```
 
-Dependencia funcional no trivial:
+**Clave primaria**
 
-```math
-DF_{5}: \{ id \} \rightarrow \{ value \}
+```
+{id}
 ```
 
-**FNBC:** Se cumple al ser `id` superllave determinando `value`.
+**Dependencias funcionales no triviales**
 
-Cierre:
+* `{id} → {category, value}`
 
-```math
-\{ id \}^+ = E_{\mathrm{data\_type}}
-```
+**Dependencias multivaluadas no triviales**
 
-**4FN:** Sin multivaluaciones, está en 4FN.
+* Ninguna
 
 ---
 
-## 6. Data Type Recollection
+## 5. Data\_Type\_Recollection
 
-La relvar `Data_Type_Recollection` relaciona una recolección con uno o varios tipos de datos:
+**Atributos**
 
-* `id`
-* `data_recollection_id` (FK a `Data_Recollection`)
-* `data_type_id` (FK a `Data_Type`)
-
-Sea:
-
-```math
-E_{\mathrm{dt\_recollection}} = \{ id,\, data\_recollection\_id,\, data\_type\_id \}
+```
+{id, data_recollection_id, data_type_id}
 ```
 
-Dependencia funcional no trivial:
+**Clave primaria**
 
-```math
-DF_{6}: \{ id \} \rightarrow \{ data\_recollection\_id,\, data\_type\_id \}
+```
+{id}
 ```
 
-**FNBC:** Se cumple porque `id` determina ambas FKs y es superllave.
+**Claves alternas**
 
-Cierre:
-
-```math
-\{ id \}^+ = E_{\mathrm{dt\_recollection}}
+```
+{data_recollection_id, data_type_id}
 ```
 
-**4FN:** No hay dependencias multivaluadas, por lo que también está en cuarta forma normal.
+**Dependencias funcionales no triviales**
+
+* `{id} → {data_recollection_id, data_type_id}`
+* `{data_recollection_id, data_type_id} → {id}`
+
+**Dependencias multivaluadas no triviales**
+
+* Ninguna
+
+---
+
+## 6. Heart\_Disease\_Stratification
+
+**Atributos**
+
+```
+{id, data_recollection_id, stratification_id}
+```
+
+**Clave primaria**
+
+```
+{id}
+```
+
+**Claves alternas**
+
+```
+{data_recollection_id, stratification_id}
+```
+
+**Dependencias funcionales no triviales**
+
+* `{id} → {data_recollection_id, stratification_id}`
+* `{data_recollection_id, stratification_id} → {id}`
+
+**Dependencias multivaluadas no triviales**
+
+* Ninguna
+
+Todas las relaciones están descompuestas de manera que cada atributo dependiente depende únicamente de la clave primaria.
+
+Al no haber MVDs, cada relvar cumple automáticamente con la condición de 4FN.
 
 Para normalizar los datos, ejecuta el siguiente comando, el cual se encargará de crear las tablas,
 asociarlas y popularlas. El nuevo schema de datos estará guardado en el schema **normalized**.
