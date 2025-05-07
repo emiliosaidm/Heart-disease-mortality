@@ -361,8 +361,6 @@ A continuación se listan, para cada relvar, sus dependencias funcionales no tri
 
 * Ninguna
 
-Todas las relaciones están descompuestas de manera que cada atributo dependiente depende únicamente de la clave primaria.
-
 Al no haber MVDs, cada relvar cumple automáticamente con la condición de 4FN.
 
 Para normalizar los datos, ejecuta el siguiente comando, el cual se encargará de crear las tablas,
