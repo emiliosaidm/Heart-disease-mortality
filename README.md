@@ -52,15 +52,12 @@ Ten en cuenta que los comandos incluidos en este repositorio asumen que la carpe
 Desde tu terminal, ejecuta la serie de comandos mostrados a continuación para poder obtener los datos.
 
 ```bash
-# Entrar a la consola de postgres
 psql -U postgres
 ```
 
 ```bash
-# Crea una nueva base de datos para el análisis
 CREATE DATABASE heart_disease_mortality;
 
-# Conéctate a la base de datos recién creada
 \c heart_disease_mortality
 
 ```
@@ -68,14 +65,12 @@ CREATE DATABASE heart_disease_mortality;
 Ahora, hay que ejecutar el siguiente script, el cual se encargará de crear un schema llamado **raw** con la tabla `raw.disease_mortality`, a la cual le importaremos los datos de la fuente usada.
 
 ```bash
-# Ejecuta el script para crear el esquema de la base de datos
 \i scripts/raw_schema_creation.sql
 ```
 
 Posteriormente, corremos el siguiente comando para poder importar las filas del CSV en la tabla `raw.disease_mortality`
 
 ```bash
-# Importamos el contenido del CSV
 \copy raw.disease_mortality (year, location_abbr, location_description, geographic_level, data_source, topic, class, data_value data_value_unit, data_value_type, data_value_footnote_symbol, data_value_footnote, stratification_category1, stratification1, stratification_category2, stratification2, topic_id, location_id, y_lat, x_lon, georeference ) FROM 'path_to_csv_file.csv' WITH(FORMAT CSV, HEADER true, DELIMITER ',');
 ```
 
