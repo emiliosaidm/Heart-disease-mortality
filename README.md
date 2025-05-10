@@ -474,3 +474,9 @@ FROM normalized.data_recollection AS dr
 JOIN normalized.location AS l
 ON dr.location_id = l.id;
 ```
+
+## Contribuidores 
+1. Emilio Said Maccise
+2. Rubén Bernal
+3. Regina 
+4. Uriel Chávez
