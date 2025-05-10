@@ -51,7 +51,7 @@ SELECT year,
   stratification2,
   y_lat,
   x_lon
-FROM clean.disease_mortality;
+FROM raw.disease_mortality;
 
 DELETE FROM clean.disease_mortality
 WHERE data_value IS NULL;
