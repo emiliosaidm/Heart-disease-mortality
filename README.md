@@ -478,5 +478,5 @@ ON dr.location_id = l.id;
 ## Contribuidores 
 1. Emilio Said Maccise
 2. Rubén Bernal
-3. Regina 
+3. Regina Cortés
 4. Uriel Chávez
