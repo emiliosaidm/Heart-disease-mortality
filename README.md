@@ -87,10 +87,10 @@ El conjunto de datos incluye 4 columnas con valores numéricos. Aunque ya se dis
 | Columna         | Min          | Avg      | Max         |
 | --------------- | ------------ | -------- | ----------- |
 | **year**        | 2020         | 2020     | 2020        |
-| **data_value**  | 0            | 351.61   | 3203.9      |
+| **data_value**  | 0            | 351.61   | 3203.90     |
 | **location_id** | 0            | 30922.42 | 78030       |
-| **y_lat**       | -14.30175426 | 37.90    | 69.30952908 |
-| **x_lon**       | -170.7194738 | -91.41   | 145.7512588 |
+| **y_lat**       | -14.30       | 37.90    | 69.31       |
+| **x_lon**       | -170.72      | -91.41   | 145.75      |
 
 Analizamos si existen **valores duplicados** dentro de las columnas categóricas, es decir, aquellas que agrupan o clasifican datos, como:
 
@@ -180,7 +180,7 @@ A pesar de que el atributo `DataSource` también mantiene un único valor desde 
 
 • Se eliminará la columna `LocationId`, ya que durante el proceso de normalización se incluirá una nueva. Además, la columna actual probablemente hace referencia a una tabla distinta de localizaciones perteneciente a la organización que recopiló los datos.
 
-• Se eliminarán las columnas `Data_Value_Footnote` y `Data_Value_Footnote_Symbol`, pues contienen mayormente valores nulos o uniformes (por ejemplo, “~” o “Insufficent Data”) que no aportan información relevante.
+• Se eliminarán las columnas `Data_Value_Footnote` y `Data_Value_Footnote_Symbol`, pues contienen mayormente valores nulos o uniformes (por ejemplo, "~" o "Insufficent Data") que no aportan información relevante.
  
 Existen aproximadamente 88,724 tuplas en las que el atributo `DataValue` es nulo. Para los fines de este proyecto, dichas tuplas no aportan información útil, ya que únicamente indican la localidad sin proporcionar el número de mortalidades. Por lo tanto, no tiene sentido conservarlas y se eliminarán del conjunto de datos.
 
