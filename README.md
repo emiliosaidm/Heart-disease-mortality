@@ -488,9 +488,10 @@ JOIN normalized.stratification AS str ON str.id = hd_str.stratification_id AND s
 GROUP BY l.x_lon, l.y_lat, str.value;
 ```
 
-Al igual, el resultado se puede graficar.
+Al igual, el resultado se graficó, como se muestra a continuación.
+![kepler gl](https://github.com/user-attachments/assets/c7f656a9-7547-4218-a4ca-daa4d8cf5edc)
 
-## Contribuidores 
+## Contribuidores
 1. Emilio Said Maccise
 2. Rubén Bernal
 3. Regina Cortés
