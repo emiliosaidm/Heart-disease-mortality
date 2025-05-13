@@ -489,7 +489,7 @@ GROUP BY l.x_lon, l.y_lat, str.value;
 ```
 
 Al igual, el resultado se graficó, como se muestra a continuación.
-![kepler gl](https://github.com/user-attachments/assets/c7f656a9-7547-4218-a4ca-daa4d8cf5edc)
+![kepler gl](https://github.com/user-attachments/assets/a3707d51-f2c3-4055-a907-674ef650b5df)
 
 ## Contribuidores
 1. Emilio Said Maccise
