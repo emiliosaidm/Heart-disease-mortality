@@ -489,6 +489,7 @@ GROUP BY l.x_lon, l.y_lat, str.value;
 ```
 
 Al igual, el resultado se graficó, como se muestra a continuación.
+
 ![kepler gl](https://github.com/user-attachments/assets/1619f455-397d-4fd8-9127-1724d4e8416f)
 
 ## Contribuidores
