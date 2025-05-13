@@ -68,3 +68,13 @@ FROM normalized.data_recollection AS dr
 JOIN normalized.location AS l
   ON dr.location_id = l.id;
 
+-- Valores promedios en latitud y longitud por sexo
+SELECT l.x_lon,
+       l.y_lat,
+       str.value,
+       AVG(dr.value) AS avg_value
+FROM normalized.data_recollection AS dr
+JOIN normalized.location AS l ON dr.location_id = l.id
+JOIN normalized.heart_disease_stratification AS hd_str ON hd_str.data_recollection_id = dr.id
+JOIN normalized.stratification AS str ON str.id = hd_str.stratification_id AND str.category = 'Sex'
+GROUP BY l.x_lon, l.y_lat, str.value;
